@@ -1,4 +1,4 @@
-name: auto update NuGet
+name: Workflow Update Dependencies
 
 on:
   schedule:
@@ -28,7 +28,7 @@ jobs:
           with:
              searchFor: 'outdated'
              versionToSelect: 'latest'
-
+             includePrerelease: true
         - name: Create Pull Request
           uses: peter-evans/create-pull-request@v4
           with:
