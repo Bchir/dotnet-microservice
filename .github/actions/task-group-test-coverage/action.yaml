@@ -1,0 +1,16 @@
+name: run test coverage
+description: run test coverage
+runs:
+  using: composite
+  steps:
+    - name: Install dotnet coverage
+      shell: bash
+      run: dotnet tool install --global dotnet-coverage
+
+    - name: Run unit Test
+      shell: bash
+      run: dotnet test --no-restore --no-build --configuration Release --verbosity normal --logger trx --collect:"XPlat Code Coverage"
+
+    - name: Merge coverages
+      shell: bash
+      run: dotnet-coverage merge --remove-input-files -r coverage.cobertura.xml -o ./coverage.cobertura.xml -f cobertura
