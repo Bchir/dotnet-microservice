@@ -1,0 +1,37 @@
+name: auto update NuGet
+
+on:
+  schedule:
+    - cron: "0 1 * * 1"
+  workflow_dispatch:
+jobs:
+ build:
+    runs-on: ubuntu-latest
+    env:
+      DOTNET_CLI_TELEMETRY_OPTOUT: 1
+      DOTNET_SKIP_FIRST_TIME_EXPERIENCE: 1
+      NUGET_XMLDOC_MODE: skip
+
+    steps:
+        - name: Checkout
+          uses: actions/checkout@v3
+          with:
+            ref: main
+        - name: build
+          uses: ./.github/actions/task-group-build
+
+        - name: NuGet update
+          uses: Bchir/update-nuget@V1.0.1-RC3
+          with:
+             searchFor: 'outdated'
+             versionToSelect: 'latest'
+
+        - name: Create Pull Request
+          uses: peter-evans/create-pull-request@v4
+          with:
+            branch: 'NugetBot/update'
+            title: 'Nuget update pull request'
+            branch-suffix: 'timestamp'
+            base: 'main'
+            commit-message: 'update packages [bot]'
+            token: ${{ secrets.PAT }}

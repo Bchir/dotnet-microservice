@@ -1,0 +1,28 @@
+name: publish coverage pages
+description: publish coverage pages
+inputs:
+  token:
+    description: 'A Github PAT'
+    required: true
+runs:
+  using: composite
+  steps:
+    - name: Checkout
+      uses: actions/checkout@v3
+      with:
+        ref: gh-pages
+        path: 'coveragereport'
+    - name: ReportGenerator
+      uses: danielpalme/ReportGenerator-GitHub-Action@5.1.13
+      with:
+        reports: coverage.cobertura.xml
+        targetdir: coveragereport
+        historydir: coveragereport/history
+        tag: "${{ github.run_number }}_${{ github.run_id }}"
+
+    - name: Deploy
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ inputs.token }}
+        publish_dir: ./coveragereport
+        keep_files: true
