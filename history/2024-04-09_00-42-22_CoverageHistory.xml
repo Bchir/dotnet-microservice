@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<coverage version="1.0" date="2024-04-09_00-42-22" tag="6_8608552478">
+  <assembly name="Gateway">
+    <class name="Gateway.ApiRegistration" coveredlines="0" coverablelines="17" totallines="49" coveredbranches="0" totalbranches="2" coveredcodeelements="0" totalcodeelements="4" />
+    <class name="Gateway.Apis.Amqp.RegistrationExtensions.AsyncApiConsumerFactoryBag" coveredlines="0" coverablelines="28" totallines="51" coveredbranches="0" totalbranches="2" coveredcodeelements="0" totalcodeelements="3" />
+    <class name="Gateway.Apis.Amqp.RegistrationExtensions.QueueConsumerFactory" coveredlines="0" coverablelines="47" totallines="88" coveredbranches="0" totalbranches="10" coveredcodeelements="0" totalcodeelements="5" />
+    <class name="Gateway.Apis.Amqp.RegistrationExtensions.ServiceCollectionExtension" coveredlines="0" coverablelines="3" totallines="17" coveredbranches="0" totalbranches="0" coveredcodeelements="0" totalcodeelements="1" />
+    <class name="Gateway.Apis.Amqp.Tooling.AsyncApiDocumentationGenerationBag" coveredlines="0" coverablelines="7" totallines="22" coveredbranches="0" totalbranches="2" coveredcodeelements="0" totalcodeelements="3" />
+    <class name="Gateway.Apis.Amqp.Tooling.AsyncApiRegistration" coveredlines="0" coverablelines="7" totallines="18" coveredbranches="0" totalbranches="0" coveredcodeelements="0" totalcodeelements="1" />
+    <class name="Gateway.Apis.Amqp.Tooling.ConsumerHost" coveredlines="0" coverablelines="10" totallines="27" coveredbranches="0" totalbranches="4" coveredcodeelements="0" totalcodeelements="3" />
+    <class name="Gateway.CreateOrderAsync" coveredlines="0" coverablelines="1" totallines="7" coveredbranches="0" totalbranches="0" coveredcodeelements="0" totalcodeelements="1" />
+    <class name="Gateway.HttpApiRegistration" coveredlines="0" coverablelines="18" totallines="29" coveredbranches="0" totalbranches="0" coveredcodeelements="0" totalcodeelements="1" />
+    <class name="Gateway.Logging" coveredlines="0" coverablelines="101" totallines="154" coveredbranches="0" totalbranches="12" coveredcodeelements="0" totalcodeelements="9" />
+    <class name="Gateway.OpenTelemetryIntegration" coveredlines="0" coverablelines="78" totallines="134" coveredbranches="0" totalbranches="16" coveredcodeelements="0" totalcodeelements="10" />
+    <class name="Gateway.Probes" coveredlines="0" coverablelines="21" totallines="40" coveredbranches="0" totalbranches="0" coveredcodeelements="0" totalcodeelements="1" />
+    <class name="Gateway.Program" coveredlines="0" coverablelines="29" totallines="45" coveredbranches="0" totalbranches="0" coveredcodeelements="0" totalcodeelements="1" />
+    <class name="Gateway.ServiceMetadata" coveredlines="0" coverablelines="8" totallines="35" coveredbranches="0" totalbranches="0" coveredcodeelements="0" totalcodeelements="8" />
+    <class name="Gateway.ServiceMetadataRegistration" coveredlines="0" coverablelines="14" totallines="35" coveredbranches="0" totalbranches="0" coveredcodeelements="0" totalcodeelements="1" />
+    <class name="Gateway.Swagger.ConfigureSwaggerOptions" coveredlines="0" coverablelines="33" totallines="69" coveredbranches="0" totalbranches="12" coveredcodeelements="0" totalcodeelements="3" />
+    <class name="Gateway.Swagger.DeprecationOperationFilter" coveredlines="2" coverablelines="5" totallines="18" coveredbranches="0" totalbranches="0" coveredcodeelements="1" totalcodeelements="2" />
+    <class name="Gateway.Swagger.SwaggerDocumentation" coveredlines="0" coverablelines="36" totallines="54" coveredbranches="0" totalbranches="4" coveredcodeelements="0" totalcodeelements="2" />
+    <class name="Gateway.Versioning" coveredlines="0" coverablelines="19" totallines="30" coveredbranches="0" totalbranches="0" coveredcodeelements="0" totalcodeelements="1" />
+    <class name="Gateway.VersionState" coveredlines="0" coverablelines="1" totallines="49" coveredbranches="0" totalbranches="0" coveredcodeelements="0" totalcodeelements="1" />
+  </assembly>
+</coverage>
