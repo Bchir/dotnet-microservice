@@ -71,10 +71,12 @@ public static class Logging
                  cfg.Endpoint = $"{openTelemetryOptions.Value.Endpoint}/v1/logs";
                  cfg.Headers = openTelemetryOptions.Value.ParsedHeaders;
                  cfg.Protocol = MapProtocol(openTelemetryOptions.Value.Protocol);
-                 cfg.IncludedData = IncludedData.TraceIdField | IncludedData.SpanIdField;
+                 cfg.IncludedData = IncludedData.MessageTemplateTextAttribute | IncludedData.TraceIdField | IncludedData.SpanIdField;
                  cfg.ResourceAttributes = new Dictionary<string, object>
                                                 {
-                                                    {"service.name", serviceMetaData.Value.ServiceName},
+                                                    // TODO: Temporary solution, remove _logs
+                                                    // see https://github.com/dotnet/aspire/issues/1072
+                                                    {"service.name", serviceMetaData.Value.ServiceName + "_logs"},
                                                     {"index", 10},
                                                     {"flag", true},
                                                     {"value", 3.14}

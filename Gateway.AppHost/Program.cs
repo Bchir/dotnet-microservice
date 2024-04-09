@@ -2,10 +2,12 @@ using Projects;
 
 var builder = DistributedApplication.CreateBuilder(args);
 
-var db = builder.AddSqlServer("MyDataBase");
+// var db = builder.AddSqlServer("MyDataBase");
 // var broker = builder.AddRabbitMQ("messagebroker");
 
-var gateway = builder.AddProject<Gateway>(nameof(Gateway))
-    .WithReference(db);
+var gateway = builder
+.AddProject<Gateway>(nameof(Gateway))
+.WithEnvironment("ServiceMetadata__ServiceName", nameof(Gateway));
+    // .WithReference(db);
 
 await builder.Build().RunAsync();

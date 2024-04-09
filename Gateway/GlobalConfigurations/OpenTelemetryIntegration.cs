@@ -1,5 +1,4 @@
-﻿using HealthChecks.OpenTelemetry.Instrumentation;
-using OpenTelemetry;
+﻿using OpenTelemetry;
 using OpenTelemetry.Metrics;
 using OpenTelemetry.Resources;
 using OpenTelemetry.Trace;
@@ -12,12 +11,6 @@ public static partial class OpenTelemetryIntegration
     public static WebApplicationBuilder AddOpenTelemetryIntegration(this WebApplicationBuilder builder, ServiceMetadata serviceMetadata)
     {
         builder.Services.Configure<OpenTelemetryOptions>(builder.Configuration);
-        builder.Services.Configure<HealthChecksInstrumentationOptions>(options =>
-        {
-            options.StatusGaugeName = serviceMetadata.ServiceName;
-            options.DurationGaugeName = serviceMetadata.ServiceName + "_duration";
-        });
-
         var openTelemetryOptions = new OpenTelemetryOptions();
         builder.Configuration.Bind(openTelemetryOptions);
         builder.Services
@@ -53,6 +46,7 @@ public static partial class OpenTelemetryIntegration
                     if (config.Enabled)
                         tracing.AddOtlpExporter(x =>
                         {
+                            x.ExportProcessorType = ExportProcessorType.Batch;
                             x.Headers = config.Headers;
                             x.Endpoint = config.Endpoint!;
                             x.TimeoutMilliseconds = config.TimeoutMilliseconds;
@@ -76,18 +70,17 @@ public static partial class OpenTelemetryIntegration
             metrics
                      .AddMeter(meter.Name)
                      .SetResourceBuilder(ResourceBuilder.CreateDefault().AddService(meter.Name))
-                     .AddAspNetCoreInstrumentation()
                      .AddRuntimeInstrumentation()
                      .AddHttpClientInstrumentation()
                      .AddEventCountersInstrumentation()
-                     .AddProcessInstrumentation()
-                     .AddHealthChecksInstrumentation();
+                     .AddProcessInstrumentation();
 
             builder.Services.ConfigureOpenTelemetryMeterProvider((metrics) =>
             {
                 if (config.Enabled)
                     metrics.AddOtlpExporter(x =>
                     {
+                        x.ExportProcessorType = ExportProcessorType.Batch;
                         x.Headers = config.Headers;
                         x.Endpoint = config.Endpoint!;
                         x.TimeoutMilliseconds = config.TimeoutMilliseconds;
