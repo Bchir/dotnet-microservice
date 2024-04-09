@@ -1,4 +1,5 @@
 using Gateway.Swagger;
+using HealthChecks.ApplicationStatus.DependencyInjection;
 
 namespace Gateway;
 
@@ -22,19 +23,23 @@ public class Program
         builder.WebHost.ConfigureKestrel(options => options.AddServerHeader = false);
         builder.AddOpenTelemetryIntegration(serviceMetaData);
         builder.Services.AddEndpointsApiExplorer();
-        builder.Services.AddHealthChecks();
+        builder.Services.AddHealthChecks()
+        .AddDiskStorageHealthCheck(x => x.CheckAllDrives = true)
+        .AddProcessAllocatedMemoryHealthCheck(500)
+        .AddApplicationStatus();
         builder.Services.AddProblemDetails();
         builder.AddApis();
 
         var app = builder.Build();
+
         app.UseRequestLogging();
         app.UseStatusCodePages();
         app.UseExceptionHandler();
         app.UseHttpsRedirection();
         app.UseProbes();
 
-        app.UseSwaggerDocumentation();
         app.UseApis();
+        app.UseSwaggerDocumentation();
         await app.RunAsync();
     }
 }
