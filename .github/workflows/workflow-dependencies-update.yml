@@ -1,4 +1,4 @@
-name: auto update NuGet
+name: Workflow Update Dependencies
 
 on:
   schedule:
@@ -7,6 +7,9 @@ on:
 jobs:
  build:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
     env:
       DOTNET_CLI_TELEMETRY_OPTOUT: 1
       DOTNET_SKIP_FIRST_TIME_EXPERIENCE: 1
@@ -14,7 +17,7 @@ jobs:
 
     steps:
         - name: Checkout
-          uses: actions/checkout@v3
+          uses: actions/checkout@v4
           with:
             ref: main
         - name: build
@@ -25,7 +28,7 @@ jobs:
           with:
              searchFor: 'outdated'
              versionToSelect: 'latest'
-
+             includePrerelease: true
         - name: Create Pull Request
           uses: peter-evans/create-pull-request@v4
           with:
@@ -34,4 +37,4 @@ jobs:
             branch-suffix: 'timestamp'
             base: 'main'
             commit-message: 'update packages [bot]'
-            token: ${{ secrets.PAT }}
+            token: ${{ secrets.GITHUB_TOKEN }}
