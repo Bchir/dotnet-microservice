@@ -1,72 +1,44 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE coverage SYSTEM "http://cobertura.sourceforge.net/xml/coverage-04.dtd">
-<coverage line-rate="0.004140786749482402" branch-rate="0" lines-covered="2" lines-valid="483" branches-covered="0" branches-valid="64" complexity="109" version="0" timestamp="1713294960">
+<coverage line-rate="0.001876172607879925" branch-rate="0" lines-covered="1" lines-valid="533" branches-covered="0" branches-valid="64" complexity="111" version="0" timestamp="1713295052">
   <sources>
     <source>/home/runner/work/dotnet-microservice/dotnet-microservice/Gateway/</source>
   </sources>
   <packages>
-    <package name="Gateway" line-rate="0.004140786749482402" branch-rate="0" complexity="109">
+    <package name="Gateway" line-rate="0.001876172607879925" branch-rate="0" complexity="111">
       <classes>
-        <class name="Gateway.ApiRegistration" filename="/home/runner/work/dotnet-microservice/dotnet-microservice/Gateway/Apis/ApiRegistration.cs" line-rate="0" branch-rate="0" complexity="5">
+        <class name="Gateway.Apis.Amqp.Orders.CreateOrderAsync" filename="/home/runner/work/dotnet-microservice/dotnet-microservice/Gateway/Apis/Amqp/Orders/CreateOrderAsync.cs" line-rate="0" branch-rate="1" complexity="1">
           <methods>
-            <method name="UseApis" signature="(Microsoft.AspNetCore.Builder.WebApplication)" line-rate="0" branch-rate="1" complexity="1">
+            <method name="get_OrderId" signature="()" line-rate="0" branch-rate="1" complexity="1">
               <lines>
-                <line number="15" hits="0" branch="false" />
-                <line number="16" hits="0" branch="false" />
-                <line number="17" hits="0" branch="false" />
-                <line number="18" hits="0" branch="false" />
-                <line number="20" hits="0" branch="false" />
-                <line number="22" hits="0" branch="false" />
-              </lines>
-            </method>
-            <method name="AddApis" signature="(Microsoft.AspNetCore.Builder.WebApplicationBuilder)" line-rate="0" branch-rate="1" complexity="1">
-              <lines>
-                <line number="30" hits="0" branch="false" />
-              </lines>
-            </method>
-            <method name="AddVersion" signature="(Asp.Versioning.Builder.ApiVersionSetBuilder,Gateway.VersionState)" line-rate="0" branch-rate="0" complexity="2">
-              <lines>
-                <line number="35" hits="0" branch="true" condition-coverage="0% (0/2)" />
-                <line number="37" hits="0" branch="false" />
-                <line number="38" hits="0" branch="false" />
-                <line number="39" hits="0" branch="false" />
-                <line number="43" hits="0" branch="false" />
-                <line number="44" hits="0" branch="false" />
-                <line number="45" hits="0" branch="false" />
-                <line number="47" hits="0" branch="false" />
-              </lines>
-            </method>
-            <method name=".cctor" signature="()" line-rate="0" branch-rate="1" complexity="1">
-              <lines>
-                <line number="10" hits="0" branch="false" />
-                <line number="11" hits="0" branch="false" />
+                <line number="7" hits="0" branch="false" />
               </lines>
             </method>
           </methods>
           <lines>
-            <line number="10" hits="0" branch="false" />
-            <line number="11" hits="0" branch="false" />
-            <line number="15" hits="0" branch="false" />
-            <line number="16" hits="0" branch="false" />
-            <line number="17" hits="0" branch="false" />
-            <line number="18" hits="0" branch="false" />
-            <line number="20" hits="0" branch="false" />
-            <line number="22" hits="0" branch="false" />
-            <line number="30" hits="0" branch="false" />
-            <line number="35" hits="0" branch="true" condition-coverage="0% (0/2)" />
-            <line number="37" hits="0" branch="false" />
-            <line number="38" hits="0" branch="false" />
-            <line number="39" hits="0" branch="false" />
-            <line number="43" hits="0" branch="false" />
-            <line number="44" hits="0" branch="false" />
-            <line number="45" hits="0" branch="false" />
-            <line number="47" hits="0" branch="false" />
+            <line number="7" hits="0" branch="false" />
+          </lines>
+        </class>
+        <class name="Gateway.Apis.Amqp.Orders.CreateOrderHandler" filename="/home/runner/work/dotnet-microservice/dotnet-microservice/Gateway/Apis/Amqp/Orders/CreateOrderAsync.cs" line-rate="0" branch-rate="1" complexity="1">
+          <methods>
+            <method name="RunAsync" signature="(Gateway.Apis.Amqp.Orders.CreateOrderAsync,System.Threading.CancellationToken)" line-rate="0" branch-rate="1" complexity="1">
+              <lines>
+                <line number="14" hits="0" branch="false" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="14" hits="0" branch="false" />
           </lines>
         </class>
         <class name="Gateway.Apis.Amqp.RegistrationExtensions.AsyncApiConsumerFactoryBag" filename="/home/runner/work/dotnet-microservice/dotnet-microservice/Gateway/Apis/Amqp/RegistrationExtensions/AsyncApiConsumerFactoryBag.cs" line-rate="0" branch-rate="0" complexity="4">
           <methods>
-            <method name="AddQueueConsumer" signature="(Gateway.VersionState)" line-rate="0" branch-rate="1" complexity="1">
+            <method name="AddQueueConsumer" signature="(Gateway.Apis.VersionState)" line-rate="0" branch-rate="1" complexity="1">
               <lines>
+                <line number="13" hits="0" branch="false" />
+                <line number="14" hits="0" branch="false" />
+                <line number="15" hits="0" branch="false" />
+                <line number="16" hits="0" branch="false" />
                 <line number="17" hits="0" branch="false" />
                 <line number="18" hits="0" branch="false" />
                 <line number="19" hits="0" branch="false" />
@@ -82,32 +54,28 @@
                 <line number="29" hits="0" branch="false" />
                 <line number="30" hits="0" branch="false" />
                 <line number="31" hits="0" branch="false" />
-                <line number="32" hits="0" branch="false" />
-                <line number="33" hits="0" branch="false" />
-                <line number="34" hits="0" branch="false" />
-                <line number="35" hits="0" branch="false" />
-                <line number="36" hits="0" branch="false" />
-                <line number="37" hits="0" branch="false" />
-                <line number="38" hits="0" branch="false" />
-                <line number="39" hits="0" branch="false" />
               </lines>
             </method>
             <method name="CreateConsumers" signature="(RabbitMQ.Client.IModel,System.IServiceProvider)" line-rate="0" branch-rate="0" complexity="2">
               <lines>
-                <line number="43" hits="0" branch="true" condition-coverage="0% (0/2)" />
-                <line number="45" hits="0" branch="false" />
-                <line number="46" hits="0" branch="false" />
-                <line number="48" hits="0" branch="false" />
+                <line number="35" hits="0" branch="true" condition-coverage="0% (0/2)" />
+                <line number="37" hits="0" branch="false" />
+                <line number="38" hits="0" branch="false" />
+                <line number="40" hits="0" branch="false" />
               </lines>
             </method>
             <method name=".cctor" signature="()" line-rate="0" branch-rate="1" complexity="1">
               <lines>
-                <line number="11" hits="0" branch="false" />
+                <line number="9" hits="0" branch="false" />
               </lines>
             </method>
           </methods>
           <lines>
-            <line number="11" hits="0" branch="false" />
+            <line number="9" hits="0" branch="false" />
+            <line number="13" hits="0" branch="false" />
+            <line number="14" hits="0" branch="false" />
+            <line number="15" hits="0" branch="false" />
+            <line number="16" hits="0" branch="false" />
             <line number="17" hits="0" branch="false" />
             <line number="18" hits="0" branch="false" />
             <line number="19" hits="0" branch="false" />
@@ -123,24 +91,125 @@
             <line number="29" hits="0" branch="false" />
             <line number="30" hits="0" branch="false" />
             <line number="31" hits="0" branch="false" />
-            <line number="32" hits="0" branch="false" />
-            <line number="33" hits="0" branch="false" />
-            <line number="34" hits="0" branch="false" />
-            <line number="35" hits="0" branch="false" />
-            <line number="36" hits="0" branch="false" />
+            <line number="35" hits="0" branch="true" condition-coverage="0% (0/2)" />
             <line number="37" hits="0" branch="false" />
             <line number="38" hits="0" branch="false" />
-            <line number="39" hits="0" branch="false" />
-            <line number="43" hits="0" branch="true" condition-coverage="0% (0/2)" />
-            <line number="45" hits="0" branch="false" />
-            <line number="46" hits="0" branch="false" />
-            <line number="48" hits="0" branch="false" />
+            <line number="40" hits="0" branch="false" />
+          </lines>
+        </class>
+        <class name="Gateway.Apis.Amqp.RegistrationExtensions.AsyncApiDocumentationGenerationBag" filename="/home/runner/work/dotnet-microservice/dotnet-microservice/Gateway/Apis/Amqp/RegistrationExtensions/AsyncApiDocumentationGenerationBag.cs" line-rate="0" branch-rate="0" complexity="4">
+          <methods>
+            <method name="AddDocumentation" signature="(System.Action`1&lt;Saunter.AsyncApiOptions&gt;)" line-rate="0" branch-rate="1" complexity="1">
+              <lines>
+                <line number="11" hits="0" branch="false" />
+                <line number="12" hits="0" branch="false" />
+              </lines>
+            </method>
+            <method name="Apply" signature="(Saunter.AsyncApiOptions)" line-rate="0" branch-rate="0" complexity="2">
+              <lines>
+                <line number="16" hits="0" branch="true" condition-coverage="0% (0/2)" />
+                <line number="18" hits="0" branch="false" />
+                <line number="20" hits="0" branch="false" />
+              </lines>
+            </method>
+            <method name=".cctor" signature="()" line-rate="0" branch-rate="1" complexity="1">
+              <lines>
+                <line number="7" hits="0" branch="false" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="7" hits="0" branch="false" />
+            <line number="11" hits="0" branch="false" />
+            <line number="12" hits="0" branch="false" />
+            <line number="16" hits="0" branch="true" condition-coverage="0% (0/2)" />
+            <line number="18" hits="0" branch="false" />
+            <line number="20" hits="0" branch="false" />
+          </lines>
+        </class>
+        <class name="Gateway.Apis.Amqp.RegistrationExtensions.AsyncApiRegistration" filename="/home/runner/work/dotnet-microservice/dotnet-microservice/Gateway/Apis/Amqp/RegistrationExtensions/AsyncApiRegistration.cs" line-rate="0" branch-rate="1" complexity="2">
+          <methods>
+            <method name="AddAsyncApiHost" signature="(Microsoft.AspNetCore.Builder.WebApplicationBuilder)" line-rate="0" branch-rate="1" complexity="1">
+              <lines>
+                <line number="13" hits="0" branch="false" />
+                <line number="14" hits="0" branch="false" />
+                <line number="15" hits="0" branch="false" />
+                <line number="17" hits="0" branch="false" />
+                <line number="18" hits="0" branch="false" />
+                <line number="19" hits="0" branch="false" />
+                <line number="20" hits="0" branch="false" />
+                <line number="22" hits="0" branch="false" />
+                <line number="23" hits="0" branch="false" />
+                <line number="24" hits="0" branch="false" />
+                <line number="25" hits="0" branch="false" />
+                <line number="27" hits="0" branch="false" />
+              </lines>
+            </method>
+            <method name=".cctor" signature="()" line-rate="0" branch-rate="1" complexity="1">
+              <lines>
+                <line number="9" hits="0" branch="false" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="9" hits="0" branch="false" />
+            <line number="13" hits="0" branch="false" />
+            <line number="14" hits="0" branch="false" />
+            <line number="15" hits="0" branch="false" />
+            <line number="17" hits="0" branch="false" />
+            <line number="18" hits="0" branch="false" />
+            <line number="19" hits="0" branch="false" />
+            <line number="20" hits="0" branch="false" />
+            <line number="22" hits="0" branch="false" />
+            <line number="23" hits="0" branch="false" />
+            <line number="24" hits="0" branch="false" />
+            <line number="25" hits="0" branch="false" />
+            <line number="27" hits="0" branch="false" />
+          </lines>
+        </class>
+        <class name="Gateway.Apis.Amqp.RegistrationExtensions.ConsumerHost" filename="/home/runner/work/dotnet-microservice/dotnet-microservice/Gateway/Apis/Amqp/RegistrationExtensions/ConsumerHost.cs" line-rate="0" branch-rate="0" complexity="6">
+          <methods>
+            <method name="StartAsync" signature="(System.Threading.CancellationToken)" line-rate="0" branch-rate="1" complexity="1">
+              <lines>
+                <line number="15" hits="0" branch="false" />
+                <line number="16" hits="0" branch="false" />
+                <line number="17" hits="0" branch="false" />
+                <line number="18" hits="0" branch="false" />
+              </lines>
+            </method>
+            <method name="StopAsync" signature="(System.Threading.CancellationToken)" line-rate="0" branch-rate="0" complexity="4">
+              <lines>
+                <line number="23" hits="0" branch="true" condition-coverage="0% (0/2)" />
+                <line number="24" hits="0" branch="true" condition-coverage="0% (0/2)" />
+                <line number="25" hits="0" branch="false" />
+              </lines>
+            </method>
+            <method name=".ctor" signature="(RabbitMQ.Client.IConnectionFactory,System.IServiceProvider)" line-rate="0" branch-rate="1" complexity="1">
+              <lines>
+                <line number="5" hits="0" branch="false" />
+                <line number="8" hits="0" branch="false" />
+                <line number="9" hits="0" branch="false" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="5" hits="0" branch="false" />
+            <line number="8" hits="0" branch="false" />
+            <line number="9" hits="0" branch="false" />
+            <line number="15" hits="0" branch="false" />
+            <line number="16" hits="0" branch="false" />
+            <line number="17" hits="0" branch="false" />
+            <line number="18" hits="0" branch="false" />
+            <line number="23" hits="0" branch="true" condition-coverage="0% (0/2)" />
+            <line number="24" hits="0" branch="true" condition-coverage="0% (0/2)" />
+            <line number="25" hits="0" branch="false" />
           </lines>
         </class>
         <class name="Gateway.Apis.Amqp.RegistrationExtensions.QueueConsumerFactory" filename="/home/runner/work/dotnet-microservice/dotnet-microservice/Gateway/Apis/Amqp/RegistrationExtensions/QueueConsumerFactory.cs" line-rate="0" branch-rate="0" complexity="13">
           <methods>
             <method name="CreateQueueConsumer" signature="(System.IServiceProvider,RabbitMQ.Client.IModel,System.String)" line-rate="0" branch-rate="1" complexity="1">
               <lines>
+                <line number="24" hits="0" branch="false" />
                 <line number="25" hits="0" branch="false" />
                 <line number="26" hits="0" branch="false" />
                 <line number="27" hits="0" branch="false" />
@@ -161,18 +230,18 @@
                 <line number="42" hits="0" branch="false" />
                 <line number="43" hits="0" branch="false" />
                 <line number="44" hits="0" branch="false" />
+                <line number="45" hits="0" branch="false" />
                 <line number="46" hits="0" branch="false" />
                 <line number="47" hits="0" branch="false" />
+                <line number="48" hits="0" branch="false" />
+                <line number="49" hits="0" branch="false" />
+                <line number="50" hits="0" branch="false" />
+                <line number="52" hits="0" branch="false" />
+                <line number="53" hits="0" branch="false" />
               </lines>
             </method>
             <method name="CreateActivity" signature="(System.String,RabbitMQ.Client.Events.BasicDeliverEventArgs)" line-rate="0" branch-rate="1" complexity="1">
               <lines>
-                <line number="51" hits="0" branch="false" />
-                <line number="52" hits="0" branch="false" />
-                <line number="53" hits="0" branch="false" />
-                <line number="54" hits="0" branch="false" />
-                <line number="55" hits="0" branch="false" />
-                <line number="56" hits="0" branch="false" />
                 <line number="57" hits="0" branch="false" />
                 <line number="58" hits="0" branch="false" />
                 <line number="59" hits="0" branch="false" />
@@ -181,35 +250,42 @@
                 <line number="62" hits="0" branch="false" />
                 <line number="63" hits="0" branch="false" />
                 <line number="64" hits="0" branch="false" />
+                <line number="65" hits="0" branch="false" />
+                <line number="66" hits="0" branch="false" />
+                <line number="67" hits="0" branch="false" />
+                <line number="68" hits="0" branch="false" />
+                <line number="69" hits="0" branch="false" />
+                <line number="70" hits="0" branch="false" />
               </lines>
             </method>
             <method name="ExtractTraceContextFromBasicProperties" signature="(RabbitMQ.Client.IBasicProperties,System.String)" line-rate="0" branch-rate="0" complexity="2">
               <lines>
-                <line number="72" hits="0" branch="true" condition-coverage="0% (0/2)" />
-                <line number="74" hits="0" branch="false" />
-                <line number="75" hits="0" branch="false" />
-                <line number="77" hits="0" branch="false" />
+                <line number="78" hits="0" branch="true" condition-coverage="0% (0/2)" />
+                <line number="80" hits="0" branch="false" />
+                <line number="81" hits="0" branch="false" />
+                <line number="83" hits="0" branch="false" />
               </lines>
             </method>
             <method name="AddMessagingTags" signature="(System.Diagnostics.Activity,System.String,System.String)" line-rate="0" branch-rate="0" complexity="8">
               <lines>
-                <line number="82" hits="0" branch="true" condition-coverage="0% (0/2)" />
-                <line number="83" hits="0" branch="true" condition-coverage="0% (0/2)" />
-                <line number="84" hits="0" branch="true" condition-coverage="0% (0/2)" />
-                <line number="85" hits="0" branch="true" condition-coverage="0% (0/2)" />
-                <line number="86" hits="0" branch="false" />
+                <line number="92" hits="0" branch="true" condition-coverage="0% (0/2)" />
+                <line number="93" hits="0" branch="true" condition-coverage="0% (0/2)" />
+                <line number="94" hits="0" branch="true" condition-coverage="0% (0/2)" />
+                <line number="95" hits="0" branch="true" condition-coverage="0% (0/2)" />
+                <line number="96" hits="0" branch="false" />
               </lines>
             </method>
             <method name=".cctor" signature="()" line-rate="0" branch-rate="1" complexity="1">
               <lines>
+                <line number="15" hits="0" branch="false" />
                 <line number="16" hits="0" branch="false" />
-                <line number="17" hits="0" branch="false" />
               </lines>
             </method>
           </methods>
           <lines>
+            <line number="15" hits="0" branch="false" />
             <line number="16" hits="0" branch="false" />
-            <line number="17" hits="0" branch="false" />
+            <line number="24" hits="0" branch="false" />
             <line number="25" hits="0" branch="false" />
             <line number="26" hits="0" branch="false" />
             <line number="27" hits="0" branch="false" />
@@ -230,14 +306,14 @@
             <line number="42" hits="0" branch="false" />
             <line number="43" hits="0" branch="false" />
             <line number="44" hits="0" branch="false" />
+            <line number="45" hits="0" branch="false" />
             <line number="46" hits="0" branch="false" />
             <line number="47" hits="0" branch="false" />
-            <line number="51" hits="0" branch="false" />
+            <line number="48" hits="0" branch="false" />
+            <line number="49" hits="0" branch="false" />
+            <line number="50" hits="0" branch="false" />
             <line number="52" hits="0" branch="false" />
             <line number="53" hits="0" branch="false" />
-            <line number="54" hits="0" branch="false" />
-            <line number="55" hits="0" branch="false" />
-            <line number="56" hits="0" branch="false" />
             <line number="57" hits="0" branch="false" />
             <line number="58" hits="0" branch="false" />
             <line number="59" hits="0" branch="false" />
@@ -246,140 +322,98 @@
             <line number="62" hits="0" branch="false" />
             <line number="63" hits="0" branch="false" />
             <line number="64" hits="0" branch="false" />
-            <line number="72" hits="0" branch="true" condition-coverage="0% (0/2)" />
-            <line number="74" hits="0" branch="false" />
-            <line number="75" hits="0" branch="false" />
-            <line number="77" hits="0" branch="false" />
-            <line number="82" hits="0" branch="true" condition-coverage="0% (0/2)" />
-            <line number="83" hits="0" branch="true" condition-coverage="0% (0/2)" />
-            <line number="84" hits="0" branch="true" condition-coverage="0% (0/2)" />
-            <line number="85" hits="0" branch="true" condition-coverage="0% (0/2)" />
-            <line number="86" hits="0" branch="false" />
+            <line number="65" hits="0" branch="false" />
+            <line number="66" hits="0" branch="false" />
+            <line number="67" hits="0" branch="false" />
+            <line number="68" hits="0" branch="false" />
+            <line number="69" hits="0" branch="false" />
+            <line number="70" hits="0" branch="false" />
+            <line number="78" hits="0" branch="true" condition-coverage="0% (0/2)" />
+            <line number="80" hits="0" branch="false" />
+            <line number="81" hits="0" branch="false" />
+            <line number="83" hits="0" branch="false" />
+            <line number="92" hits="0" branch="true" condition-coverage="0% (0/2)" />
+            <line number="93" hits="0" branch="true" condition-coverage="0% (0/2)" />
+            <line number="94" hits="0" branch="true" condition-coverage="0% (0/2)" />
+            <line number="95" hits="0" branch="true" condition-coverage="0% (0/2)" />
+            <line number="96" hits="0" branch="false" />
           </lines>
         </class>
         <class name="Gateway.Apis.Amqp.RegistrationExtensions.ServiceCollectionExtension" filename="/home/runner/work/dotnet-microservice/dotnet-microservice/Gateway/Apis/Amqp/RegistrationExtensions/ServiceCollectionExtension.cs" line-rate="0" branch-rate="1" complexity="1">
           <methods>
-            <method name="AddQueueConsumer" signature="(Microsoft.Extensions.DependencyInjection.IServiceCollection,Gateway.VersionState)" line-rate="0" branch-rate="1" complexity="1">
+            <method name="AddQueueConsumer" signature="(Microsoft.Extensions.DependencyInjection.IServiceCollection,Gateway.Apis.VersionState)" line-rate="0" branch-rate="1" complexity="1">
               <lines>
+                <line number="11" hits="0" branch="false" />
                 <line number="12" hits="0" branch="false" />
                 <line number="13" hits="0" branch="false" />
-                <line number="14" hits="0" branch="false" />
               </lines>
             </method>
           </methods>
           <lines>
+            <line number="11" hits="0" branch="false" />
             <line number="12" hits="0" branch="false" />
             <line number="13" hits="0" branch="false" />
-            <line number="14" hits="0" branch="false" />
           </lines>
         </class>
-        <class name="Gateway.Apis.Amqp.Tooling.AsyncApiDocumentationGenerationBag" filename="/home/runner/work/dotnet-microservice/dotnet-microservice/Gateway/Apis/Amqp/RegistrationExtensions/AsyncApiDocumentationGenerationBag.cs" line-rate="0" branch-rate="0" complexity="4">
+        <class name="Gateway.Apis.ApiRegistration" filename="/home/runner/work/dotnet-microservice/dotnet-microservice/Gateway/Apis/ApiRegistration.cs" line-rate="0" branch-rate="0" complexity="5">
           <methods>
-            <method name="AddDocumentation" signature="(System.Action`1&lt;Saunter.AsyncApiOptions&gt;)" line-rate="0" branch-rate="1" complexity="1">
+            <method name="UseApis" signature="(Microsoft.AspNetCore.Builder.WebApplication)" line-rate="0" branch-rate="1" complexity="1">
               <lines>
-                <line number="11" hits="0" branch="false" />
-                <line number="12" hits="0" branch="false" />
-              </lines>
-            </method>
-            <method name="Apply" signature="(Saunter.AsyncApiOptions)" line-rate="0" branch-rate="0" complexity="2">
-              <lines>
-                <line number="16" hits="0" branch="true" condition-coverage="0% (0/2)" />
+                <line number="17" hits="0" branch="false" />
                 <line number="18" hits="0" branch="false" />
                 <line number="19" hits="0" branch="false" />
-                <line number="21" hits="0" branch="false" />
+                <line number="20" hits="0" branch="false" />
+                <line number="22" hits="0" branch="false" />
+                <line number="24" hits="0" branch="false" />
+              </lines>
+            </method>
+            <method name="AddApis" signature="(Microsoft.AspNetCore.Builder.WebApplicationBuilder)" line-rate="0" branch-rate="1" complexity="1">
+              <lines>
+                <line number="31" hits="0" branch="false" />
+                <line number="32" hits="0" branch="false" />
+              </lines>
+            </method>
+            <method name="AddVersion" signature="(Asp.Versioning.Builder.ApiVersionSetBuilder,Gateway.Apis.VersionState)" line-rate="0" branch-rate="0" complexity="2">
+              <lines>
+                <line number="37" hits="0" branch="true" condition-coverage="0% (0/2)" />
+                <line number="39" hits="0" branch="false" />
+                <line number="40" hits="0" branch="false" />
+                <line number="41" hits="0" branch="false" />
+                <line number="45" hits="0" branch="false" />
+                <line number="46" hits="0" branch="false" />
+                <line number="47" hits="0" branch="false" />
+                <line number="49" hits="0" branch="false" />
               </lines>
             </method>
             <method name=".cctor" signature="()" line-rate="0" branch-rate="1" complexity="1">
               <lines>
-                <line number="7" hits="0" branch="false" />
-              </lines>
-            </method>
-          </methods>
-          <lines>
-            <line number="7" hits="0" branch="false" />
-            <line number="11" hits="0" branch="false" />
-            <line number="12" hits="0" branch="false" />
-            <line number="16" hits="0" branch="true" condition-coverage="0% (0/2)" />
-            <line number="18" hits="0" branch="false" />
-            <line number="19" hits="0" branch="false" />
-            <line number="21" hits="0" branch="false" />
-          </lines>
-        </class>
-        <class name="Gateway.Apis.Amqp.Tooling.AsyncApiRegistration" filename="/home/runner/work/dotnet-microservice/dotnet-microservice/Gateway/Apis/Amqp/RegistrationExtensions/AsyncApiRegistration.cs" line-rate="0" branch-rate="1" complexity="1">
-          <methods>
-            <method name="AddAsyncApiHost" signature="(Microsoft.AspNetCore.Builder.WebApplicationBuilder)" line-rate="0" branch-rate="1" complexity="1">
-              <lines>
-                <line number="9" hits="0" branch="false" />
-                <line number="10" hits="0" branch="false" />
-                <line number="11" hits="0" branch="false" />
                 <line number="12" hits="0" branch="false" />
                 <line number="13" hits="0" branch="false" />
-                <line number="14" hits="0" branch="false" />
-                <line number="15" hits="0" branch="false" />
               </lines>
             </method>
           </methods>
           <lines>
-            <line number="9" hits="0" branch="false" />
-            <line number="10" hits="0" branch="false" />
-            <line number="11" hits="0" branch="false" />
             <line number="12" hits="0" branch="false" />
             <line number="13" hits="0" branch="false" />
-            <line number="14" hits="0" branch="false" />
-            <line number="15" hits="0" branch="false" />
-          </lines>
-        </class>
-        <class name="Gateway.Apis.Amqp.Tooling.ConsumerHost" filename="/home/runner/work/dotnet-microservice/dotnet-microservice/Gateway/Apis/Amqp/RegistrationExtensions/ConsumerHost.cs" line-rate="0" branch-rate="0" complexity="6">
-          <methods>
-            <method name="StartAsync" signature="(System.Threading.CancellationToken)" line-rate="0" branch-rate="1" complexity="1">
-              <lines>
-                <line number="15" hits="0" branch="false" />
-                <line number="16" hits="0" branch="false" />
-                <line number="17" hits="0" branch="false" />
-                <line number="18" hits="0" branch="false" />
-              </lines>
-            </method>
-            <method name="StopAsync" signature="(System.Threading.CancellationToken)" line-rate="0" branch-rate="0" complexity="4">
-              <lines>
-                <line number="23" hits="0" branch="true" condition-coverage="0% (0/2)" />
-                <line number="24" hits="0" branch="true" condition-coverage="0% (0/2)" />
-                <line number="25" hits="0" branch="false" />
-              </lines>
-            </method>
-            <method name=".ctor" signature="(RabbitMQ.Client.IConnectionFactory,System.IServiceProvider)" line-rate="0" branch-rate="1" complexity="1">
-              <lines>
-                <line number="6" hits="0" branch="false" />
-                <line number="8" hits="0" branch="false" />
-                <line number="9" hits="0" branch="false" />
-              </lines>
-            </method>
-          </methods>
-          <lines>
-            <line number="6" hits="0" branch="false" />
-            <line number="8" hits="0" branch="false" />
-            <line number="9" hits="0" branch="false" />
-            <line number="15" hits="0" branch="false" />
-            <line number="16" hits="0" branch="false" />
             <line number="17" hits="0" branch="false" />
             <line number="18" hits="0" branch="false" />
-            <line number="23" hits="0" branch="true" condition-coverage="0% (0/2)" />
-            <line number="24" hits="0" branch="true" condition-coverage="0% (0/2)" />
-            <line number="25" hits="0" branch="false" />
+            <line number="19" hits="0" branch="false" />
+            <line number="20" hits="0" branch="false" />
+            <line number="22" hits="0" branch="false" />
+            <line number="24" hits="0" branch="false" />
+            <line number="31" hits="0" branch="false" />
+            <line number="32" hits="0" branch="false" />
+            <line number="37" hits="0" branch="true" condition-coverage="0% (0/2)" />
+            <line number="39" hits="0" branch="false" />
+            <line number="40" hits="0" branch="false" />
+            <line number="41" hits="0" branch="false" />
+            <line number="45" hits="0" branch="false" />
+            <line number="46" hits="0" branch="false" />
+            <line number="47" hits="0" branch="false" />
+            <line number="49" hits="0" branch="false" />
           </lines>
         </class>
-        <class name="Gateway.CreateOrderAsync" filename="/home/runner/work/dotnet-microservice/dotnet-microservice/Gateway/Apis/Amqp/Orders/CreateOrderAsync.cs" line-rate="0" branch-rate="1" complexity="1">
-          <methods>
-            <method name="get_OrderId" signature="()" line-rate="0" branch-rate="1" complexity="1">
-              <lines>
-                <line number="5" hits="0" branch="false" />
-              </lines>
-            </method>
-          </methods>
-          <lines>
-            <line number="5" hits="0" branch="false" />
-          </lines>
-        </class>
-        <class name="Gateway.HttpApiRegistration" filename="/home/runner/work/dotnet-microservice/dotnet-microservice/Gateway/Apis/Http/HttpApiRegistration.cs" line-rate="0" branch-rate="1" complexity="1">
+        <class name="Gateway.Apis.Http.HttpApiRegistration" filename="/home/runner/work/dotnet-microservice/dotnet-microservice/Gateway/Apis/Http/HttpApiRegistration.cs" line-rate="0" branch-rate="1" complexity="1">
           <methods>
             <method name="UseHttpApis" signature="(Microsoft.AspNetCore.Builder.WebApplication,Asp.Versioning.Builder.ApiVersionSet)" line-rate="0" branch-rate="1" complexity="1">
               <lines>
@@ -401,6 +435,9 @@
                 <line number="25" hits="0" branch="false" />
                 <line number="26" hits="0" branch="false" />
                 <line number="27" hits="0" branch="false" />
+                <line number="28" hits="0" branch="false" />
+                <line number="29" hits="0" branch="false" />
+                <line number="30" hits="0" branch="false" />
               </lines>
             </method>
           </methods>
@@ -423,17 +460,323 @@
             <line number="25" hits="0" branch="false" />
             <line number="26" hits="0" branch="false" />
             <line number="27" hits="0" branch="false" />
+            <line number="28" hits="0" branch="false" />
+            <line number="29" hits="0" branch="false" />
+            <line number="30" hits="0" branch="false" />
+          </lines>
+        </class>
+        <class name="Gateway.Apis.VersionState" filename="/home/runner/work/dotnet-microservice/dotnet-microservice/Gateway/Apis/ApiRegistration.cs" line-rate="0" branch-rate="1" complexity="1">
+          <methods>
+            <method name="get_Version" signature="()" line-rate="0" branch-rate="1" complexity="1">
+              <lines>
+                <line number="8" hits="0" branch="false" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="8" hits="0" branch="false" />
           </lines>
         </class>
         <class name="Gateway.Logging" filename="/home/runner/work/dotnet-microservice/dotnet-microservice/Gateway/GlobalConfigurations/Logging.cs" line-rate="0" branch-rate="0" complexity="17">
           <methods>
             <method name="UseRequestLogging" signature="(Microsoft.AspNetCore.Builder.WebApplication)" line-rate="0" branch-rate="1" complexity="1">
               <lines>
+                <line number="33" hits="0" branch="false" />
+                <line number="34" hits="0" branch="false" />
+                <line number="35" hits="0" branch="false" />
+                <line number="36" hits="0" branch="false" />
+                <line number="37" hits="0" branch="false" />
+                <line number="38" hits="0" branch="false" />
+                <line number="39" hits="0" branch="false" />
+                <line number="40" hits="0" branch="false" />
+                <line number="41" hits="0" branch="false" />
+                <line number="42" hits="0" branch="false" />
+                <line number="43" hits="0" branch="false" />
+                <line number="44" hits="0" branch="false" />
+                <line number="45" hits="0" branch="false" />
+                <line number="46" hits="0" branch="false" />
+                <line number="47" hits="0" branch="false" />
+                <line number="48" hits="0" branch="false" />
+                <line number="49" hits="0" branch="false" />
+                <line number="50" hits="0" branch="false" />
+                <line number="51" hits="0" branch="false" />
+                <line number="52" hits="0" branch="false" />
+              </lines>
+            </method>
+            <method name="AddLogger" signature="(Microsoft.AspNetCore.Builder.WebApplicationBuilder)" line-rate="0" branch-rate="1" complexity="1">
+              <lines>
+                <line number="57" hits="0" branch="false" />
+                <line number="58" hits="0" branch="false" />
+                <line number="59" hits="0" branch="false" />
+                <line number="60" hits="0" branch="false" />
+                <line number="61" hits="0" branch="false" />
+                <line number="62" hits="0" branch="false" />
+                <line number="63" hits="0" branch="false" />
+                <line number="64" hits="0" branch="false" />
+                <line number="66" hits="0" branch="false" />
+              </lines>
+            </method>
+            <method name="SinkLog" signature="(Serilog.LoggerConfiguration,System.IServiceProvider)" line-rate="0" branch-rate="0" complexity="2">
+              <lines>
+                <line number="74" hits="0" branch="false" />
+                <line number="75" hits="0" branch="false" />
+                <line number="76" hits="0" branch="false" />
+                <line number="77" hits="0" branch="false" />
+                <line number="81" hits="0" branch="false" />
+                <line number="82" hits="0" branch="true" condition-coverage="0% (0/2)" />
+                <line number="84" hits="0" branch="false" />
+                <line number="85" hits="0" branch="false" />
+                <line number="86" hits="0" branch="false" />
+                <line number="87" hits="0" branch="false" />
+                <line number="88" hits="0" branch="false" />
+                <line number="89" hits="0" branch="false" />
+                <line number="90" hits="0" branch="false" />
+                <line number="91" hits="0" branch="false" />
+                <line number="92" hits="0" branch="false" />
+                <line number="93" hits="0" branch="false" />
+                <line number="94" hits="0" branch="false" />
+                <line number="95" hits="0" branch="false" />
+                <line number="96" hits="0" branch="false" />
+                <line number="97" hits="0" branch="false" />
+                <line number="98" hits="0" branch="false" />
+                <line number="99" hits="0" branch="false" />
+                <line number="100" hits="0" branch="false" />
+                <line number="101" hits="0" branch="false" />
+                <line number="102" hits="0" branch="false" />
+                <line number="104" hits="0" branch="false" />
+              </lines>
+            </method>
+            <method name="MapProtocol" signature="(OpenTelemetry.Exporter.OtlpExportProtocol)" line-rate="0" branch-rate="0" complexity="4">
+              <lines>
+                <line number="108" hits="0" branch="true" condition-coverage="0% (0/4)" />
+                <line number="109" hits="0" branch="false" />
+                <line number="110" hits="0" branch="false" />
+                <line number="111" hits="0" branch="false" />
+                <line number="112" hits="0" branch="false" />
+                <line number="113" hits="0" branch="false" />
+              </lines>
+            </method>
+            <method name="EnrichLog" signature="(Serilog.LoggerConfiguration,System.IServiceProvider)" line-rate="0" branch-rate="1" complexity="1">
+              <lines>
+                <line number="121" hits="0" branch="false" />
+                <line number="123" hits="0" branch="false" />
+                <line number="124" hits="0" branch="false" />
+                <line number="125" hits="0" branch="false" />
+                <line number="126" hits="0" branch="false" />
+                <line number="127" hits="0" branch="false" />
+                <line number="128" hits="0" branch="false" />
+                <line number="129" hits="0" branch="false" />
+                <line number="130" hits="0" branch="false" />
+                <line number="131" hits="0" branch="false" />
+                <line number="132" hits="0" branch="false" />
+                <line number="133" hits="0" branch="false" />
+                <line number="134" hits="0" branch="false" />
+                <line number="135" hits="0" branch="false" />
+                <line number="136" hits="0" branch="false" />
+                <line number="137" hits="0" branch="false" />
+                <line number="138" hits="0" branch="false" />
+                <line number="139" hits="0" branch="false" />
+                <line number="140" hits="0" branch="false" />
+                <line number="141" hits="0" branch="false" />
+                <line number="142" hits="0" branch="false" />
+                <line number="143" hits="0" branch="false" />
+                <line number="144" hits="0" branch="false" />
+                <line number="145" hits="0" branch="false" />
+                <line number="146" hits="0" branch="false" />
+                <line number="147" hits="0" branch="false" />
+                <line number="148" hits="0" branch="false" />
+                <line number="149" hits="0" branch="false" />
+                <line number="150" hits="0" branch="false" />
+                <line number="151" hits="0" branch="false" />
+                <line number="152" hits="0" branch="false" />
+                <line number="153" hits="0" branch="false" />
+                <line number="154" hits="0" branch="false" />
+                <line number="155" hits="0" branch="false" />
+                <line number="156" hits="0" branch="false" />
+                <line number="157" hits="0" branch="false" />
+                <line number="158" hits="0" branch="false" />
+              </lines>
+            </method>
+            <method name="GetPath" signature="(Microsoft.AspNetCore.Http.HttpContext)" line-rate="0" branch-rate="0" complexity="4">
+              <lines>
+                <line number="162" hits="0" branch="true" condition-coverage="0% (0/2)" />
+                <line number="163" hits="0" branch="true" condition-coverage="0% (0/2)" />
+                <line number="165" hits="0" branch="false" />
+                <line number="168" hits="0" branch="false" />
+              </lines>
+            </method>
+            <method name="LogCompletion" signature="(Microsoft.AspNetCore.Http.HttpContext,System.TimeSpan,System.Exception)" line-rate="0" branch-rate="0" complexity="2">
+              <lines>
+                <line number="177" hits="0" branch="false" />
+                <line number="178" hits="0" branch="false" />
+                <line number="179" hits="0" branch="false" />
+                <line number="180" hits="0" branch="true" condition-coverage="0% (0/2)" />
+                <line number="181" hits="0" branch="false" />
+                <line number="182" hits="0" branch="false" />
+              </lines>
+            </method>
+            <method name=".cctor" signature="()" line-rate="0" branch-rate="1" complexity="1">
+              <lines>
+                <line number="18" hits="0" branch="false" />
+                <line number="19" hits="0" branch="false" />
+                <line number="20" hits="0" branch="false" />
+                <line number="21" hits="0" branch="false" />
+                <line number="22" hits="0" branch="false" />
+                <line number="23" hits="0" branch="false" />
+                <line number="24" hits="0" branch="false" />
+                <line number="25" hits="0" branch="false" />
+                <line number="26" hits="0" branch="false" />
                 <line number="27" hits="0" branch="false" />
                 <line number="28" hits="0" branch="false" />
                 <line number="29" hits="0" branch="false" />
-                <line number="30" hits="0" branch="false" />
-                <line number="31" hits="0" branch="false" />
+              </lines>
+            </method>
+            <method name=".ctor" signature="()" line-rate="0" branch-rate="1" complexity="1">
+              <lines>
+                <line number="184" hits="0" branch="false" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="18" hits="0" branch="false" />
+            <line number="19" hits="0" branch="false" />
+            <line number="20" hits="0" branch="false" />
+            <line number="21" hits="0" branch="false" />
+            <line number="22" hits="0" branch="false" />
+            <line number="23" hits="0" branch="false" />
+            <line number="24" hits="0" branch="false" />
+            <line number="25" hits="0" branch="false" />
+            <line number="26" hits="0" branch="false" />
+            <line number="27" hits="0" branch="false" />
+            <line number="28" hits="0" branch="false" />
+            <line number="29" hits="0" branch="false" />
+            <line number="33" hits="0" branch="false" />
+            <line number="34" hits="0" branch="false" />
+            <line number="35" hits="0" branch="false" />
+            <line number="36" hits="0" branch="false" />
+            <line number="37" hits="0" branch="false" />
+            <line number="38" hits="0" branch="false" />
+            <line number="39" hits="0" branch="false" />
+            <line number="40" hits="0" branch="false" />
+            <line number="41" hits="0" branch="false" />
+            <line number="42" hits="0" branch="false" />
+            <line number="43" hits="0" branch="false" />
+            <line number="44" hits="0" branch="false" />
+            <line number="45" hits="0" branch="false" />
+            <line number="46" hits="0" branch="false" />
+            <line number="47" hits="0" branch="false" />
+            <line number="48" hits="0" branch="false" />
+            <line number="49" hits="0" branch="false" />
+            <line number="50" hits="0" branch="false" />
+            <line number="51" hits="0" branch="false" />
+            <line number="52" hits="0" branch="false" />
+            <line number="57" hits="0" branch="false" />
+            <line number="58" hits="0" branch="false" />
+            <line number="59" hits="0" branch="false" />
+            <line number="60" hits="0" branch="false" />
+            <line number="61" hits="0" branch="false" />
+            <line number="62" hits="0" branch="false" />
+            <line number="63" hits="0" branch="false" />
+            <line number="64" hits="0" branch="false" />
+            <line number="66" hits="0" branch="false" />
+            <line number="74" hits="0" branch="false" />
+            <line number="75" hits="0" branch="false" />
+            <line number="76" hits="0" branch="false" />
+            <line number="77" hits="0" branch="false" />
+            <line number="81" hits="0" branch="false" />
+            <line number="82" hits="0" branch="true" condition-coverage="0% (0/2)" />
+            <line number="84" hits="0" branch="false" />
+            <line number="85" hits="0" branch="false" />
+            <line number="86" hits="0" branch="false" />
+            <line number="87" hits="0" branch="false" />
+            <line number="88" hits="0" branch="false" />
+            <line number="89" hits="0" branch="false" />
+            <line number="90" hits="0" branch="false" />
+            <line number="91" hits="0" branch="false" />
+            <line number="92" hits="0" branch="false" />
+            <line number="93" hits="0" branch="false" />
+            <line number="94" hits="0" branch="false" />
+            <line number="95" hits="0" branch="false" />
+            <line number="96" hits="0" branch="false" />
+            <line number="97" hits="0" branch="false" />
+            <line number="98" hits="0" branch="false" />
+            <line number="99" hits="0" branch="false" />
+            <line number="100" hits="0" branch="false" />
+            <line number="101" hits="0" branch="false" />
+            <line number="102" hits="0" branch="false" />
+            <line number="104" hits="0" branch="false" />
+            <line number="108" hits="0" branch="true" condition-coverage="0% (0/4)" />
+            <line number="109" hits="0" branch="false" />
+            <line number="110" hits="0" branch="false" />
+            <line number="111" hits="0" branch="false" />
+            <line number="112" hits="0" branch="false" />
+            <line number="113" hits="0" branch="false" />
+            <line number="121" hits="0" branch="false" />
+            <line number="123" hits="0" branch="false" />
+            <line number="124" hits="0" branch="false" />
+            <line number="125" hits="0" branch="false" />
+            <line number="126" hits="0" branch="false" />
+            <line number="127" hits="0" branch="false" />
+            <line number="128" hits="0" branch="false" />
+            <line number="129" hits="0" branch="false" />
+            <line number="130" hits="0" branch="false" />
+            <line number="131" hits="0" branch="false" />
+            <line number="132" hits="0" branch="false" />
+            <line number="133" hits="0" branch="false" />
+            <line number="134" hits="0" branch="false" />
+            <line number="135" hits="0" branch="false" />
+            <line number="136" hits="0" branch="false" />
+            <line number="137" hits="0" branch="false" />
+            <line number="138" hits="0" branch="false" />
+            <line number="139" hits="0" branch="false" />
+            <line number="140" hits="0" branch="false" />
+            <line number="141" hits="0" branch="false" />
+            <line number="142" hits="0" branch="false" />
+            <line number="143" hits="0" branch="false" />
+            <line number="144" hits="0" branch="false" />
+            <line number="145" hits="0" branch="false" />
+            <line number="146" hits="0" branch="false" />
+            <line number="147" hits="0" branch="false" />
+            <line number="148" hits="0" branch="false" />
+            <line number="149" hits="0" branch="false" />
+            <line number="150" hits="0" branch="false" />
+            <line number="151" hits="0" branch="false" />
+            <line number="152" hits="0" branch="false" />
+            <line number="153" hits="0" branch="false" />
+            <line number="154" hits="0" branch="false" />
+            <line number="155" hits="0" branch="false" />
+            <line number="156" hits="0" branch="false" />
+            <line number="157" hits="0" branch="false" />
+            <line number="158" hits="0" branch="false" />
+            <line number="162" hits="0" branch="true" condition-coverage="0% (0/2)" />
+            <line number="163" hits="0" branch="true" condition-coverage="0% (0/2)" />
+            <line number="165" hits="0" branch="false" />
+            <line number="168" hits="0" branch="false" />
+            <line number="177" hits="0" branch="false" />
+            <line number="178" hits="0" branch="false" />
+            <line number="179" hits="0" branch="false" />
+            <line number="180" hits="0" branch="true" condition-coverage="0% (0/2)" />
+            <line number="181" hits="0" branch="false" />
+            <line number="182" hits="0" branch="false" />
+            <line number="184" hits="0" branch="false" />
+          </lines>
+        </class>
+        <class name="Gateway.OpenTelemetryIntegration" filename="/home/runner/work/dotnet-microservice/dotnet-microservice/Gateway/GlobalConfigurations/OpenTelemetryIntegration.cs" line-rate="0" branch-rate="0" complexity="13">
+          <methods>
+            <method name="AddOpenTelemetryIntegration" signature="(Microsoft.AspNetCore.Builder.WebApplicationBuilder,Gateway.ServiceMetadata)" line-rate="0" branch-rate="1" complexity="1">
+              <lines>
+                <line number="16" hits="0" branch="false" />
+                <line number="17" hits="0" branch="false" />
+                <line number="18" hits="0" branch="false" />
+                <line number="19" hits="0" branch="false" />
+                <line number="20" hits="0" branch="false" />
+                <line number="21" hits="0" branch="false" />
+                <line number="22" hits="0" branch="false" />
+                <line number="23" hits="0" branch="false" />
+              </lines>
+            </method>
+            <method name="AddTracing" signature="(OpenTelemetry.IOpenTelemetryBuilder,Gateway.ServiceMetadata,Gateway.OpenTelemetryIntegration/OpenTelemetryOptions)" line-rate="0" branch-rate="0" complexity="6">
+              <lines>
                 <line number="32" hits="0" branch="false" />
                 <line number="33" hits="0" branch="false" />
                 <line number="34" hits="0" branch="false" />
@@ -447,32 +790,31 @@
                 <line number="42" hits="0" branch="false" />
                 <line number="43" hits="0" branch="false" />
                 <line number="44" hits="0" branch="false" />
-              </lines>
-            </method>
-            <method name="AddLogger" signature="(Microsoft.AspNetCore.Builder.WebApplicationBuilder)" line-rate="0" branch-rate="1" complexity="1">
-              <lines>
+                <line number="45" hits="0" branch="false" />
+                <line number="46" hits="0" branch="false" />
+                <line number="47" hits="0" branch="false" />
+                <line number="48" hits="0" branch="false" />
                 <line number="49" hits="0" branch="false" />
-                <line number="50" hits="0" branch="false" />
+                <line number="50" hits="0" branch="true" condition-coverage="0% (0/2)" />
                 <line number="51" hits="0" branch="false" />
                 <line number="52" hits="0" branch="false" />
-                <line number="53" hits="0" branch="false" />
-                <line number="54" hits="0" branch="false" />
+                <line number="53" hits="0" branch="true" condition-coverage="0% (0/2)" />
+                <line number="54" hits="0" branch="true" condition-coverage="0% (0/2)" />
+                <line number="55" hits="0" branch="false" />
                 <line number="56" hits="0" branch="false" />
-              </lines>
-            </method>
-            <method name="SinkLog" signature="(Serilog.LoggerConfiguration,System.IServiceProvider)" line-rate="0" branch-rate="0" complexity="2">
-              <lines>
+                <line number="57" hits="0" branch="false" />
+                <line number="58" hits="0" branch="false" />
+                <line number="59" hits="0" branch="false" />
+                <line number="60" hits="0" branch="false" />
                 <line number="61" hits="0" branch="false" />
                 <line number="62" hits="0" branch="false" />
-                <line number="65" hits="0" branch="false" />
+                <line number="63" hits="0" branch="false" />
+                <line number="64" hits="0" branch="false" />
                 <line number="66" hits="0" branch="false" />
-                <line number="67" hits="0" branch="true" condition-coverage="0% (0/2)" />
-                <line number="69" hits="0" branch="false" />
-                <line number="70" hits="0" branch="false" />
-                <line number="71" hits="0" branch="false" />
-                <line number="72" hits="0" branch="false" />
-                <line number="73" hits="0" branch="false" />
-                <line number="74" hits="0" branch="false" />
+              </lines>
+            </method>
+            <method name="AddMetrics" signature="(OpenTelemetry.IOpenTelemetryBuilder,Gateway.ServiceMetadata,Gateway.OpenTelemetryIntegration/OpenTelemetryOptions)" line-rate="0" branch-rate="0" complexity="6">
+              <lines>
                 <line number="75" hits="0" branch="false" />
                 <line number="76" hits="0" branch="false" />
                 <line number="77" hits="0" branch="false" />
@@ -483,100 +825,36 @@
                 <line number="82" hits="0" branch="false" />
                 <line number="83" hits="0" branch="false" />
                 <line number="84" hits="0" branch="false" />
+                <line number="85" hits="0" branch="false" />
                 <line number="86" hits="0" branch="false" />
-              </lines>
-            </method>
-            <method name="MapProtocol" signature="(OpenTelemetry.Exporter.OtlpExportProtocol)" line-rate="0" branch-rate="0" complexity="4">
-              <lines>
-                <line number="90" hits="0" branch="true" condition-coverage="0% (0/4)" />
-                <line number="91" hits="0" branch="false" />
+                <line number="87" hits="0" branch="true" condition-coverage="0% (0/2)" />
+                <line number="88" hits="0" branch="false" />
+                <line number="89" hits="0" branch="false" />
+                <line number="90" hits="0" branch="true" condition-coverage="0% (0/2)" />
+                <line number="91" hits="0" branch="true" condition-coverage="0% (0/2)" />
                 <line number="92" hits="0" branch="false" />
                 <line number="93" hits="0" branch="false" />
                 <line number="94" hits="0" branch="false" />
                 <line number="95" hits="0" branch="false" />
-              </lines>
-            </method>
-            <method name="EnrichLog" signature="(Serilog.LoggerConfiguration,System.IServiceProvider)" line-rate="0" branch-rate="1" complexity="1">
-              <lines>
+                <line number="96" hits="0" branch="false" />
+                <line number="97" hits="0" branch="false" />
+                <line number="98" hits="0" branch="false" />
+                <line number="99" hits="0" branch="false" />
                 <line number="100" hits="0" branch="false" />
                 <line number="101" hits="0" branch="false" />
                 <line number="103" hits="0" branch="false" />
-                <line number="104" hits="0" branch="false" />
-                <line number="105" hits="0" branch="false" />
-                <line number="106" hits="0" branch="false" />
-                <line number="107" hits="0" branch="false" />
-                <line number="108" hits="0" branch="false" />
-                <line number="109" hits="0" branch="false" />
-                <line number="110" hits="0" branch="false" />
-                <line number="111" hits="0" branch="false" />
-                <line number="112" hits="0" branch="false" />
-                <line number="113" hits="0" branch="false" />
-                <line number="114" hits="0" branch="false" />
-                <line number="115" hits="0" branch="false" />
-                <line number="116" hits="0" branch="false" />
-                <line number="117" hits="0" branch="false" />
-                <line number="118" hits="0" branch="false" />
-                <line number="119" hits="0" branch="false" />
-                <line number="120" hits="0" branch="false" />
-                <line number="121" hits="0" branch="false" />
-                <line number="122" hits="0" branch="false" />
-                <line number="123" hits="0" branch="false" />
-                <line number="124" hits="0" branch="false" />
-                <line number="125" hits="0" branch="false" />
-                <line number="126" hits="0" branch="false" />
-                <line number="127" hits="0" branch="false" />
-                <line number="128" hits="0" branch="false" />
-                <line number="129" hits="0" branch="false" />
-                <line number="130" hits="0" branch="false" />
-                <line number="131" hits="0" branch="false" />
-              </lines>
-            </method>
-            <method name="GetPath" signature="(Microsoft.AspNetCore.Http.HttpContext)" line-rate="0" branch-rate="0" complexity="4">
-              <lines>
-                <line number="135" hits="0" branch="true" condition-coverage="0% (0/2)" />
-                <line number="136" hits="0" branch="true" condition-coverage="0% (0/2)" />
-                <line number="138" hits="0" branch="false" />
-                <line number="141" hits="0" branch="false" />
-              </lines>
-            </method>
-            <method name="LogCompletion" signature="(Microsoft.AspNetCore.Http.HttpContext,System.TimeSpan,System.Exception)" line-rate="0" branch-rate="0" complexity="2">
-              <lines>
-                <line number="146" hits="0" branch="false" />
-                <line number="147" hits="0" branch="false" />
-                <line number="148" hits="0" branch="false" />
-                <line number="149" hits="0" branch="true" condition-coverage="0% (0/2)" />
-                <line number="150" hits="0" branch="false" />
-                <line number="151" hits="0" branch="false" />
-              </lines>
-            </method>
-            <method name=".cctor" signature="()" line-rate="0" branch-rate="1" complexity="1">
-              <lines>
-                <line number="18" hits="0" branch="false" />
-                <line number="19" hits="0" branch="false" />
-                <line number="20" hits="0" branch="false" />
-                <line number="21" hits="0" branch="false" />
-                <line number="22" hits="0" branch="false" />
-                <line number="23" hits="0" branch="false" />
-              </lines>
-            </method>
-            <method name=".ctor" signature="()" line-rate="0" branch-rate="1" complexity="1">
-              <lines>
-                <line number="153" hits="0" branch="false" />
               </lines>
             </method>
           </methods>
           <lines>
+            <line number="16" hits="0" branch="false" />
+            <line number="17" hits="0" branch="false" />
             <line number="18" hits="0" branch="false" />
             <line number="19" hits="0" branch="false" />
             <line number="20" hits="0" branch="false" />
             <line number="21" hits="0" branch="false" />
             <line number="22" hits="0" branch="false" />
             <line number="23" hits="0" branch="false" />
-            <line number="27" hits="0" branch="false" />
-            <line number="28" hits="0" branch="false" />
-            <line number="29" hits="0" branch="false" />
-            <line number="30" hits="0" branch="false" />
-            <line number="31" hits="0" branch="false" />
             <line number="32" hits="0" branch="false" />
             <line number="33" hits="0" branch="false" />
             <line number="34" hits="0" branch="false" />
@@ -590,24 +868,27 @@
             <line number="42" hits="0" branch="false" />
             <line number="43" hits="0" branch="false" />
             <line number="44" hits="0" branch="false" />
+            <line number="45" hits="0" branch="false" />
+            <line number="46" hits="0" branch="false" />
+            <line number="47" hits="0" branch="false" />
+            <line number="48" hits="0" branch="false" />
             <line number="49" hits="0" branch="false" />
-            <line number="50" hits="0" branch="false" />
+            <line number="50" hits="0" branch="true" condition-coverage="0% (0/2)" />
             <line number="51" hits="0" branch="false" />
             <line number="52" hits="0" branch="false" />
-            <line number="53" hits="0" branch="false" />
-            <line number="54" hits="0" branch="false" />
+            <line number="53" hits="0" branch="true" condition-coverage="0% (0/2)" />
+            <line number="54" hits="0" branch="true" condition-coverage="0% (0/2)" />
+            <line number="55" hits="0" branch="false" />
             <line number="56" hits="0" branch="false" />
+            <line number="57" hits="0" branch="false" />
+            <line number="58" hits="0" branch="false" />
+            <line number="59" hits="0" branch="false" />
+            <line number="60" hits="0" branch="false" />
             <line number="61" hits="0" branch="false" />
             <line number="62" hits="0" branch="false" />
-            <line number="65" hits="0" branch="false" />
+            <line number="63" hits="0" branch="false" />
+            <line number="64" hits="0" branch="false" />
             <line number="66" hits="0" branch="false" />
-            <line number="67" hits="0" branch="true" condition-coverage="0% (0/2)" />
-            <line number="69" hits="0" branch="false" />
-            <line number="70" hits="0" branch="false" />
-            <line number="71" hits="0" branch="false" />
-            <line number="72" hits="0" branch="false" />
-            <line number="73" hits="0" branch="false" />
-            <line number="74" hits="0" branch="false" />
             <line number="75" hits="0" branch="false" />
             <line number="76" hits="0" branch="false" />
             <line number="77" hits="0" branch="false" />
@@ -618,201 +899,24 @@
             <line number="82" hits="0" branch="false" />
             <line number="83" hits="0" branch="false" />
             <line number="84" hits="0" branch="false" />
+            <line number="85" hits="0" branch="false" />
             <line number="86" hits="0" branch="false" />
-            <line number="90" hits="0" branch="true" condition-coverage="0% (0/4)" />
-            <line number="91" hits="0" branch="false" />
+            <line number="87" hits="0" branch="true" condition-coverage="0% (0/2)" />
+            <line number="88" hits="0" branch="false" />
+            <line number="89" hits="0" branch="false" />
+            <line number="90" hits="0" branch="true" condition-coverage="0% (0/2)" />
+            <line number="91" hits="0" branch="true" condition-coverage="0% (0/2)" />
             <line number="92" hits="0" branch="false" />
             <line number="93" hits="0" branch="false" />
             <line number="94" hits="0" branch="false" />
             <line number="95" hits="0" branch="false" />
+            <line number="96" hits="0" branch="false" />
+            <line number="97" hits="0" branch="false" />
+            <line number="98" hits="0" branch="false" />
+            <line number="99" hits="0" branch="false" />
             <line number="100" hits="0" branch="false" />
             <line number="101" hits="0" branch="false" />
             <line number="103" hits="0" branch="false" />
-            <line number="104" hits="0" branch="false" />
-            <line number="105" hits="0" branch="false" />
-            <line number="106" hits="0" branch="false" />
-            <line number="107" hits="0" branch="false" />
-            <line number="108" hits="0" branch="false" />
-            <line number="109" hits="0" branch="false" />
-            <line number="110" hits="0" branch="false" />
-            <line number="111" hits="0" branch="false" />
-            <line number="112" hits="0" branch="false" />
-            <line number="113" hits="0" branch="false" />
-            <line number="114" hits="0" branch="false" />
-            <line number="115" hits="0" branch="false" />
-            <line number="116" hits="0" branch="false" />
-            <line number="117" hits="0" branch="false" />
-            <line number="118" hits="0" branch="false" />
-            <line number="119" hits="0" branch="false" />
-            <line number="120" hits="0" branch="false" />
-            <line number="121" hits="0" branch="false" />
-            <line number="122" hits="0" branch="false" />
-            <line number="123" hits="0" branch="false" />
-            <line number="124" hits="0" branch="false" />
-            <line number="125" hits="0" branch="false" />
-            <line number="126" hits="0" branch="false" />
-            <line number="127" hits="0" branch="false" />
-            <line number="128" hits="0" branch="false" />
-            <line number="129" hits="0" branch="false" />
-            <line number="130" hits="0" branch="false" />
-            <line number="131" hits="0" branch="false" />
-            <line number="135" hits="0" branch="true" condition-coverage="0% (0/2)" />
-            <line number="136" hits="0" branch="true" condition-coverage="0% (0/2)" />
-            <line number="138" hits="0" branch="false" />
-            <line number="141" hits="0" branch="false" />
-            <line number="146" hits="0" branch="false" />
-            <line number="147" hits="0" branch="false" />
-            <line number="148" hits="0" branch="false" />
-            <line number="149" hits="0" branch="true" condition-coverage="0% (0/2)" />
-            <line number="150" hits="0" branch="false" />
-            <line number="151" hits="0" branch="false" />
-            <line number="153" hits="0" branch="false" />
-          </lines>
-        </class>
-        <class name="Gateway.OpenTelemetryIntegration" filename="/home/runner/work/dotnet-microservice/dotnet-microservice/Gateway/GlobalConfigurations/OpenTelemetryIntegration.cs" line-rate="0" branch-rate="0" complexity="13">
-          <methods>
-            <method name="AddOpenTelemetryIntegration" signature="(Microsoft.AspNetCore.Builder.WebApplicationBuilder,Gateway.ServiceMetadata)" line-rate="0" branch-rate="1" complexity="1">
-              <lines>
-                <line number="13" hits="0" branch="false" />
-                <line number="14" hits="0" branch="false" />
-                <line number="15" hits="0" branch="false" />
-                <line number="16" hits="0" branch="false" />
-                <line number="17" hits="0" branch="false" />
-                <line number="18" hits="0" branch="false" />
-                <line number="19" hits="0" branch="false" />
-                <line number="20" hits="0" branch="false" />
-              </lines>
-            </method>
-            <method name="AddTracing" signature="(OpenTelemetry.IOpenTelemetryBuilder,Gateway.ServiceMetadata,Gateway.OpenTelemetryIntegration/OpenTelemetryOptions)" line-rate="0" branch-rate="0" complexity="6">
-              <lines>
-                <line number="28" hits="0" branch="false" />
-                <line number="29" hits="0" branch="false" />
-                <line number="30" hits="0" branch="false" />
-                <line number="31" hits="0" branch="false" />
-                <line number="32" hits="0" branch="false" />
-                <line number="33" hits="0" branch="false" />
-                <line number="34" hits="0" branch="false" />
-                <line number="35" hits="0" branch="false" />
-                <line number="36" hits="0" branch="false" />
-                <line number="37" hits="0" branch="false" />
-                <line number="38" hits="0" branch="false" />
-                <line number="39" hits="0" branch="false" />
-                <line number="40" hits="0" branch="false" />
-                <line number="41" hits="0" branch="false" />
-                <line number="42" hits="0" branch="false" />
-                <line number="43" hits="0" branch="false" />
-                <line number="44" hits="0" branch="true" condition-coverage="0% (0/2)" />
-                <line number="45" hits="0" branch="false" />
-                <line number="46" hits="0" branch="true" condition-coverage="0% (0/2)" />
-                <line number="47" hits="0" branch="true" condition-coverage="0% (0/2)" />
-                <line number="48" hits="0" branch="false" />
-                <line number="49" hits="0" branch="false" />
-                <line number="50" hits="0" branch="false" />
-                <line number="51" hits="0" branch="false" />
-                <line number="52" hits="0" branch="false" />
-                <line number="53" hits="0" branch="false" />
-                <line number="54" hits="0" branch="false" />
-                <line number="55" hits="0" branch="false" />
-                <line number="56" hits="0" branch="false" />
-                <line number="58" hits="0" branch="false" />
-              </lines>
-            </method>
-            <method name="AddMetrics" signature="(OpenTelemetry.IOpenTelemetryBuilder,Gateway.ServiceMetadata,Gateway.OpenTelemetryIntegration/OpenTelemetryOptions)" line-rate="0" branch-rate="0" complexity="6">
-              <lines>
-                <line number="66" hits="0" branch="false" />
-                <line number="67" hits="0" branch="false" />
-                <line number="68" hits="0" branch="false" />
-                <line number="69" hits="0" branch="false" />
-                <line number="70" hits="0" branch="false" />
-                <line number="71" hits="0" branch="false" />
-                <line number="72" hits="0" branch="false" />
-                <line number="73" hits="0" branch="false" />
-                <line number="74" hits="0" branch="false" />
-                <line number="75" hits="0" branch="false" />
-                <line number="76" hits="0" branch="false" />
-                <line number="77" hits="0" branch="false" />
-                <line number="78" hits="0" branch="true" condition-coverage="0% (0/2)" />
-                <line number="79" hits="0" branch="false" />
-                <line number="80" hits="0" branch="true" condition-coverage="0% (0/2)" />
-                <line number="81" hits="0" branch="true" condition-coverage="0% (0/2)" />
-                <line number="82" hits="0" branch="false" />
-                <line number="83" hits="0" branch="false" />
-                <line number="84" hits="0" branch="false" />
-                <line number="85" hits="0" branch="false" />
-                <line number="86" hits="0" branch="false" />
-                <line number="87" hits="0" branch="false" />
-                <line number="88" hits="0" branch="false" />
-                <line number="89" hits="0" branch="false" />
-                <line number="90" hits="0" branch="false" />
-                <line number="92" hits="0" branch="false" />
-              </lines>
-            </method>
-          </methods>
-          <lines>
-            <line number="13" hits="0" branch="false" />
-            <line number="14" hits="0" branch="false" />
-            <line number="15" hits="0" branch="false" />
-            <line number="16" hits="0" branch="false" />
-            <line number="17" hits="0" branch="false" />
-            <line number="18" hits="0" branch="false" />
-            <line number="19" hits="0" branch="false" />
-            <line number="20" hits="0" branch="false" />
-            <line number="28" hits="0" branch="false" />
-            <line number="29" hits="0" branch="false" />
-            <line number="30" hits="0" branch="false" />
-            <line number="31" hits="0" branch="false" />
-            <line number="32" hits="0" branch="false" />
-            <line number="33" hits="0" branch="false" />
-            <line number="34" hits="0" branch="false" />
-            <line number="35" hits="0" branch="false" />
-            <line number="36" hits="0" branch="false" />
-            <line number="37" hits="0" branch="false" />
-            <line number="38" hits="0" branch="false" />
-            <line number="39" hits="0" branch="false" />
-            <line number="40" hits="0" branch="false" />
-            <line number="41" hits="0" branch="false" />
-            <line number="42" hits="0" branch="false" />
-            <line number="43" hits="0" branch="false" />
-            <line number="44" hits="0" branch="true" condition-coverage="0% (0/2)" />
-            <line number="45" hits="0" branch="false" />
-            <line number="46" hits="0" branch="true" condition-coverage="0% (0/2)" />
-            <line number="47" hits="0" branch="true" condition-coverage="0% (0/2)" />
-            <line number="48" hits="0" branch="false" />
-            <line number="49" hits="0" branch="false" />
-            <line number="50" hits="0" branch="false" />
-            <line number="51" hits="0" branch="false" />
-            <line number="52" hits="0" branch="false" />
-            <line number="53" hits="0" branch="false" />
-            <line number="54" hits="0" branch="false" />
-            <line number="55" hits="0" branch="false" />
-            <line number="56" hits="0" branch="false" />
-            <line number="58" hits="0" branch="false" />
-            <line number="66" hits="0" branch="false" />
-            <line number="67" hits="0" branch="false" />
-            <line number="68" hits="0" branch="false" />
-            <line number="69" hits="0" branch="false" />
-            <line number="70" hits="0" branch="false" />
-            <line number="71" hits="0" branch="false" />
-            <line number="72" hits="0" branch="false" />
-            <line number="73" hits="0" branch="false" />
-            <line number="74" hits="0" branch="false" />
-            <line number="75" hits="0" branch="false" />
-            <line number="76" hits="0" branch="false" />
-            <line number="77" hits="0" branch="false" />
-            <line number="78" hits="0" branch="true" condition-coverage="0% (0/2)" />
-            <line number="79" hits="0" branch="false" />
-            <line number="80" hits="0" branch="true" condition-coverage="0% (0/2)" />
-            <line number="81" hits="0" branch="true" condition-coverage="0% (0/2)" />
-            <line number="82" hits="0" branch="false" />
-            <line number="83" hits="0" branch="false" />
-            <line number="84" hits="0" branch="false" />
-            <line number="85" hits="0" branch="false" />
-            <line number="86" hits="0" branch="false" />
-            <line number="87" hits="0" branch="false" />
-            <line number="88" hits="0" branch="false" />
-            <line number="89" hits="0" branch="false" />
-            <line number="90" hits="0" branch="false" />
-            <line number="92" hits="0" branch="false" />
           </lines>
         </class>
         <class name="Gateway.OpenTelemetryIntegration" filename="/home/runner/work/dotnet-microservice/dotnet-microservice/Gateway/GlobalConfigurations/OpenTelemetryOptions.cs" line-rate="0" branch-rate="0" complexity="10">
@@ -891,9 +995,9 @@
                 <line number="23" hits="0" branch="false" />
                 <line number="24" hits="0" branch="false" />
                 <line number="25" hits="0" branch="false" />
+                <line number="26" hits="0" branch="false" />
                 <line number="27" hits="0" branch="false" />
                 <line number="28" hits="0" branch="false" />
-                <line number="29" hits="0" branch="false" />
                 <line number="30" hits="0" branch="false" />
                 <line number="31" hits="0" branch="false" />
                 <line number="32" hits="0" branch="false" />
@@ -901,7 +1005,13 @@
                 <line number="34" hits="0" branch="false" />
                 <line number="35" hits="0" branch="false" />
                 <line number="36" hits="0" branch="false" />
+                <line number="37" hits="0" branch="false" />
                 <line number="38" hits="0" branch="false" />
+                <line number="39" hits="0" branch="false" />
+                <line number="40" hits="0" branch="false" />
+                <line number="41" hits="0" branch="false" />
+                <line number="42" hits="0" branch="false" />
+                <line number="44" hits="0" branch="false" />
               </lines>
             </method>
           </methods>
@@ -916,9 +1026,9 @@
             <line number="23" hits="0" branch="false" />
             <line number="24" hits="0" branch="false" />
             <line number="25" hits="0" branch="false" />
+            <line number="26" hits="0" branch="false" />
             <line number="27" hits="0" branch="false" />
             <line number="28" hits="0" branch="false" />
-            <line number="29" hits="0" branch="false" />
             <line number="30" hits="0" branch="false" />
             <line number="31" hits="0" branch="false" />
             <line number="32" hits="0" branch="false" />
@@ -926,23 +1036,24 @@
             <line number="34" hits="0" branch="false" />
             <line number="35" hits="0" branch="false" />
             <line number="36" hits="0" branch="false" />
+            <line number="37" hits="0" branch="false" />
             <line number="38" hits="0" branch="false" />
+            <line number="39" hits="0" branch="false" />
+            <line number="40" hits="0" branch="false" />
+            <line number="41" hits="0" branch="false" />
+            <line number="42" hits="0" branch="false" />
+            <line number="44" hits="0" branch="false" />
           </lines>
         </class>
         <class name="Gateway.Program" filename="/home/runner/work/dotnet-microservice/dotnet-microservice/Gateway/Program.cs" line-rate="0" branch-rate="1" complexity="1">
           <methods>
             <method name="Main" signature="()" line-rate="0" branch-rate="1" complexity="1">
               <lines>
-                <line number="10" hits="0" branch="false" />
-                <line number="11" hits="0" branch="false" />
-                <line number="12" hits="0" branch="false" />
-                <line number="13" hits="0" branch="false" />
                 <line number="15" hits="0" branch="false" />
                 <line number="16" hits="0" branch="false" />
                 <line number="18" hits="0" branch="false" />
-                <line number="19" hits="0" branch="false" />
                 <line number="20" hits="0" branch="false" />
-                <line number="21" hits="0" branch="false" />
+                <line number="22" hits="0" branch="false" />
                 <line number="23" hits="0" branch="false" />
                 <line number="24" hits="0" branch="false" />
                 <line number="25" hits="0" branch="false" />
@@ -952,30 +1063,28 @@
                 <line number="29" hits="0" branch="false" />
                 <line number="30" hits="0" branch="false" />
                 <line number="31" hits="0" branch="false" />
-                <line number="33" hits="0" branch="false" />
-                <line number="35" hits="0" branch="false" />
+                <line number="32" hits="0" branch="false" />
+                <line number="34" hits="0" branch="false" />
                 <line number="36" hits="0" branch="false" />
                 <line number="37" hits="0" branch="false" />
                 <line number="38" hits="0" branch="false" />
                 <line number="39" hits="0" branch="false" />
-                <line number="41" hits="0" branch="false" />
+                <line number="40" hits="0" branch="false" />
                 <line number="42" hits="0" branch="false" />
                 <line number="43" hits="0" branch="false" />
                 <line number="44" hits="0" branch="false" />
+                <line number="45" hits="0" branch="false" />
+                <line number="46" hits="0" branch="false" />
+                <line number="47" hits="0" branch="false" />
               </lines>
             </method>
           </methods>
           <lines>
-            <line number="10" hits="0" branch="false" />
-            <line number="11" hits="0" branch="false" />
-            <line number="12" hits="0" branch="false" />
-            <line number="13" hits="0" branch="false" />
             <line number="15" hits="0" branch="false" />
             <line number="16" hits="0" branch="false" />
             <line number="18" hits="0" branch="false" />
-            <line number="19" hits="0" branch="false" />
             <line number="20" hits="0" branch="false" />
-            <line number="21" hits="0" branch="false" />
+            <line number="22" hits="0" branch="false" />
             <line number="23" hits="0" branch="false" />
             <line number="24" hits="0" branch="false" />
             <line number="25" hits="0" branch="false" />
@@ -985,16 +1094,19 @@
             <line number="29" hits="0" branch="false" />
             <line number="30" hits="0" branch="false" />
             <line number="31" hits="0" branch="false" />
-            <line number="33" hits="0" branch="false" />
-            <line number="35" hits="0" branch="false" />
+            <line number="32" hits="0" branch="false" />
+            <line number="34" hits="0" branch="false" />
             <line number="36" hits="0" branch="false" />
             <line number="37" hits="0" branch="false" />
             <line number="38" hits="0" branch="false" />
             <line number="39" hits="0" branch="false" />
-            <line number="41" hits="0" branch="false" />
+            <line number="40" hits="0" branch="false" />
             <line number="42" hits="0" branch="false" />
             <line number="43" hits="0" branch="false" />
             <line number="44" hits="0" branch="false" />
+            <line number="45" hits="0" branch="false" />
+            <line number="46" hits="0" branch="false" />
+            <line number="47" hits="0" branch="false" />
           </lines>
         </class>
         <class name="Gateway.ServiceMetadata" filename="/home/runner/work/dotnet-microservice/dotnet-microservice/Gateway/GlobalConfigurations/ServiceMetadata.cs" line-rate="0" branch-rate="1" complexity="8">
@@ -1064,11 +1176,8 @@
                 <line number="25" hits="0" branch="false" />
                 <line number="26" hits="0" branch="false" />
                 <line number="27" hits="0" branch="false" />
-                <line number="28" hits="0" branch="false" />
+                <line number="29" hits="0" branch="false" />
                 <line number="30" hits="0" branch="false" />
-                <line number="31" hits="0" branch="false" />
-                <line number="32" hits="0" branch="false" />
-                <line number="33" hits="0" branch="false" />
               </lines>
             </method>
           </methods>
@@ -1082,29 +1191,25 @@
             <line number="25" hits="0" branch="false" />
             <line number="26" hits="0" branch="false" />
             <line number="27" hits="0" branch="false" />
-            <line number="28" hits="0" branch="false" />
+            <line number="29" hits="0" branch="false" />
             <line number="30" hits="0" branch="false" />
-            <line number="31" hits="0" branch="false" />
-            <line number="32" hits="0" branch="false" />
-            <line number="33" hits="0" branch="false" />
           </lines>
         </class>
         <class name="Gateway.Swagger.ConfigureSwaggerOptions" filename="/home/runner/work/dotnet-microservice/dotnet-microservice/Gateway/GlobalConfigurations/Swagger/ConfigureSwaggerOptions.cs" line-rate="0" branch-rate="0" complexity="13">
           <methods>
             <method name="Configure" signature="(Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenOptions)" line-rate="0" branch-rate="0" complexity="2">
               <lines>
-                <line number="18" hits="0" branch="true" condition-coverage="0% (0/2)" />
-                <line number="20" hits="0" branch="false" />
-                <line number="22" hits="0" branch="false" />
+                <line number="19" hits="0" branch="true" condition-coverage="0% (0/2)" />
+                <line number="21" hits="0" branch="false" />
+                <line number="23" hits="0" branch="false" />
               </lines>
             </method>
             <method name="CreateInfoForApiVersion" signature="(Asp.Versioning.ApiExplorer.ApiVersionDescription)" line-rate="0" branch-rate="0" complexity="10">
               <lines>
-                <line number="26" hits="0" branch="false" />
                 <line number="27" hits="0" branch="false" />
                 <line number="28" hits="0" branch="false" />
                 <line number="29" hits="0" branch="false" />
-                <line number="31" hits="0" branch="false" />
+                <line number="30" hits="0" branch="false" />
                 <line number="32" hits="0" branch="false" />
                 <line number="33" hits="0" branch="false" />
                 <line number="34" hits="0" branch="false" />
@@ -1112,21 +1217,30 @@
                 <line number="36" hits="0" branch="false" />
                 <line number="37" hits="0" branch="false" />
                 <line number="38" hits="0" branch="false" />
-                <line number="40" hits="0" branch="true" condition-coverage="0% (0/2)" />
+                <line number="39" hits="0" branch="false" />
+                <line number="40" hits="0" branch="false" />
+                <line number="41" hits="0" branch="false" />
                 <line number="42" hits="0" branch="false" />
                 <line number="43" hits="0" branch="false" />
-                <line number="46" hits="0" branch="true" condition-coverage="0% (0/2)" />
-                <line number="48" hits="0" branch="true" condition-coverage="0% (0/2)" />
-                <line number="50" hits="0" branch="false" />
+                <line number="44" hits="0" branch="false" />
+                <line number="45" hits="0" branch="false" />
+                <line number="46" hits="0" branch="false" />
+                <line number="47" hits="0" branch="false" />
+                <line number="49" hits="0" branch="true" condition-coverage="0% (0/2)" />
                 <line number="51" hits="0" branch="false" />
                 <line number="52" hits="0" branch="false" />
                 <line number="55" hits="0" branch="true" condition-coverage="0% (0/2)" />
-                <line number="57" hits="0" branch="false" />
-                <line number="58" hits="0" branch="true" condition-coverage="0% (0/2)" />
+                <line number="57" hits="0" branch="true" condition-coverage="0% (0/2)" />
+                <line number="59" hits="0" branch="false" />
                 <line number="60" hits="0" branch="false" />
-                <line number="64" hits="0" branch="false" />
+                <line number="61" hits="0" branch="false" />
+                <line number="64" hits="0" branch="true" condition-coverage="0% (0/2)" />
                 <line number="66" hits="0" branch="false" />
-                <line number="67" hits="0" branch="false" />
+                <line number="67" hits="0" branch="true" condition-coverage="0% (0/2)" />
+                <line number="69" hits="0" branch="false" />
+                <line number="73" hits="0" branch="false" />
+                <line number="75" hits="0" branch="false" />
+                <line number="76" hits="0" branch="false" />
               </lines>
             </method>
             <method name=".ctor" signature="(Asp.Versioning.ApiExplorer.IApiVersionDescriptionProvider,Microsoft.Extensions.Options.IOptions`1&lt;Gateway.ServiceMetadata&gt;)" line-rate="0" branch-rate="1" complexity="1">
@@ -1134,6 +1248,7 @@
                 <line number="10" hits="0" branch="false" />
                 <line number="11" hits="0" branch="false" />
                 <line number="12" hits="0" branch="false" />
+                <line number="13" hits="0" branch="false" />
               </lines>
             </method>
           </methods>
@@ -1141,14 +1256,14 @@
             <line number="10" hits="0" branch="false" />
             <line number="11" hits="0" branch="false" />
             <line number="12" hits="0" branch="false" />
-            <line number="18" hits="0" branch="true" condition-coverage="0% (0/2)" />
-            <line number="20" hits="0" branch="false" />
-            <line number="22" hits="0" branch="false" />
-            <line number="26" hits="0" branch="false" />
+            <line number="13" hits="0" branch="false" />
+            <line number="19" hits="0" branch="true" condition-coverage="0% (0/2)" />
+            <line number="21" hits="0" branch="false" />
+            <line number="23" hits="0" branch="false" />
             <line number="27" hits="0" branch="false" />
             <line number="28" hits="0" branch="false" />
             <line number="29" hits="0" branch="false" />
-            <line number="31" hits="0" branch="false" />
+            <line number="30" hits="0" branch="false" />
             <line number="32" hits="0" branch="false" />
             <line number="33" hits="0" branch="false" />
             <line number="34" hits="0" branch="false" />
@@ -1156,45 +1271,52 @@
             <line number="36" hits="0" branch="false" />
             <line number="37" hits="0" branch="false" />
             <line number="38" hits="0" branch="false" />
-            <line number="40" hits="0" branch="true" condition-coverage="0% (0/2)" />
+            <line number="39" hits="0" branch="false" />
+            <line number="40" hits="0" branch="false" />
+            <line number="41" hits="0" branch="false" />
             <line number="42" hits="0" branch="false" />
             <line number="43" hits="0" branch="false" />
-            <line number="46" hits="0" branch="true" condition-coverage="0% (0/2)" />
-            <line number="48" hits="0" branch="true" condition-coverage="0% (0/2)" />
-            <line number="50" hits="0" branch="false" />
+            <line number="44" hits="0" branch="false" />
+            <line number="45" hits="0" branch="false" />
+            <line number="46" hits="0" branch="false" />
+            <line number="47" hits="0" branch="false" />
+            <line number="49" hits="0" branch="true" condition-coverage="0% (0/2)" />
             <line number="51" hits="0" branch="false" />
             <line number="52" hits="0" branch="false" />
             <line number="55" hits="0" branch="true" condition-coverage="0% (0/2)" />
-            <line number="57" hits="0" branch="false" />
-            <line number="58" hits="0" branch="true" condition-coverage="0% (0/2)" />
+            <line number="57" hits="0" branch="true" condition-coverage="0% (0/2)" />
+            <line number="59" hits="0" branch="false" />
             <line number="60" hits="0" branch="false" />
-            <line number="64" hits="0" branch="false" />
+            <line number="61" hits="0" branch="false" />
+            <line number="64" hits="0" branch="true" condition-coverage="0% (0/2)" />
             <line number="66" hits="0" branch="false" />
-            <line number="67" hits="0" branch="false" />
+            <line number="67" hits="0" branch="true" condition-coverage="0% (0/2)" />
+            <line number="69" hits="0" branch="false" />
+            <line number="73" hits="0" branch="false" />
+            <line number="75" hits="0" branch="false" />
+            <line number="76" hits="0" branch="false" />
           </lines>
         </class>
-        <class name="Gateway.Swagger.DeprecationOperationFilter" filename="/home/runner/work/dotnet-microservice/dotnet-microservice/Gateway/GlobalConfigurations/Swagger/DeprecationOperationFilter.cs" line-rate="0.4" branch-rate="1" complexity="2">
+        <class name="Gateway.Swagger.DeprecationOperationFilter" filename="/home/runner/work/dotnet-microservice/dotnet-microservice/Gateway/GlobalConfigurations/Swagger/DeprecationOperationFilter.cs" line-rate="0.25" branch-rate="1" complexity="2">
           <methods>
             <method name="Apply" signature="(Microsoft.OpenApi.Models.OpenApiOperation,Swashbuckle.AspNetCore.SwaggerGen.OperationFilterContext)" line-rate="0" branch-rate="1" complexity="1">
               <lines>
+                <line number="13" hits="0" branch="false" />
+                <line number="14" hits="0" branch="false" />
                 <line number="15" hits="0" branch="false" />
-                <line number="16" hits="0" branch="false" />
-                <line number="17" hits="0" branch="false" />
               </lines>
             </method>
             <method name=".ctor" signature="()" line-rate="1" branch-rate="1" complexity="1">
               <lines>
                 <line number="9" hits="1" branch="false" />
-                <line number="11" hits="1" branch="false" />
               </lines>
             </method>
           </methods>
           <lines>
             <line number="9" hits="1" branch="false" />
-            <line number="11" hits="1" branch="false" />
+            <line number="13" hits="0" branch="false" />
+            <line number="14" hits="0" branch="false" />
             <line number="15" hits="0" branch="false" />
-            <line number="16" hits="0" branch="false" />
-            <line number="17" hits="0" branch="false" />
           </lines>
         </class>
         <class name="Gateway.Swagger.SwaggerDocumentation" filename="/home/runner/work/dotnet-microservice/dotnet-microservice/Gateway/GlobalConfigurations/Swagger/SwaggerDocumentation.cs" line-rate="0" branch-rate="0" complexity="5">
@@ -1231,7 +1353,6 @@
                 <line number="39" hits="0" branch="false" />
                 <line number="40" hits="0" branch="false" />
                 <line number="41" hits="0" branch="false" />
-                <line number="42" hits="0" branch="false" />
                 <line number="43" hits="0" branch="false" />
                 <line number="44" hits="0" branch="false" />
                 <line number="45" hits="0" branch="false" />
@@ -1240,7 +1361,10 @@
                 <line number="48" hits="0" branch="false" />
                 <line number="49" hits="0" branch="false" />
                 <line number="50" hits="0" branch="false" />
+                <line number="51" hits="0" branch="false" />
                 <line number="52" hits="0" branch="false" />
+                <line number="53" hits="0" branch="false" />
+                <line number="55" hits="0" branch="false" />
               </lines>
             </method>
           </methods>
@@ -1271,7 +1395,6 @@
             <line number="39" hits="0" branch="false" />
             <line number="40" hits="0" branch="false" />
             <line number="41" hits="0" branch="false" />
-            <line number="42" hits="0" branch="false" />
             <line number="43" hits="0" branch="false" />
             <line number="44" hits="0" branch="false" />
             <line number="45" hits="0" branch="false" />
@@ -1280,7 +1403,10 @@
             <line number="48" hits="0" branch="false" />
             <line number="49" hits="0" branch="false" />
             <line number="50" hits="0" branch="false" />
+            <line number="51" hits="0" branch="false" />
             <line number="52" hits="0" branch="false" />
+            <line number="53" hits="0" branch="false" />
+            <line number="55" hits="0" branch="false" />
           </lines>
         </class>
         <class name="Gateway.Versioning" filename="/home/runner/work/dotnet-microservice/dotnet-microservice/Gateway/GlobalConfigurations/Versioning.cs" line-rate="0" branch-rate="1" complexity="1">
@@ -1329,18 +1455,6 @@
             <line number="25" hits="0" branch="false" />
             <line number="26" hits="0" branch="false" />
             <line number="28" hits="0" branch="false" />
-          </lines>
-        </class>
-        <class name="Gateway.VersionState" filename="/home/runner/work/dotnet-microservice/dotnet-microservice/Gateway/Apis/ApiRegistration.cs" line-rate="0" branch-rate="1" complexity="1">
-          <methods>
-            <method name="get_Version" signature="()" line-rate="0" branch-rate="1" complexity="1">
-              <lines>
-                <line number="6" hits="0" branch="false" />
-              </lines>
-            </method>
-          </methods>
-          <lines>
-            <line number="6" hits="0" branch="false" />
           </lines>
         </class>
       </classes>
