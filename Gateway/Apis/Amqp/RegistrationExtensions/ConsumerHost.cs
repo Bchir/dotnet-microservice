@@ -1,9 +1,9 @@
-﻿using Gateway.Apis.Amqp.RegistrationExtensions;
-using RabbitMQ.Client;
+﻿using RabbitMQ.Client;
 
-namespace Gateway.Apis.Amqp.Tooling;
+namespace Gateway.Apis.Amqp.RegistrationExtensions;
 
-public class ConsumerHost(IConnectionFactory connectionFactory, IServiceProvider serviceProvider) : IHostedService
+public class ConsumerHost(IConnectionFactory connectionFactory, IServiceProvider serviceProvider)
+    : IHostedService
 {
     private readonly IConnectionFactory _connectionFactory = connectionFactory;
     private readonly IServiceProvider _serviceProvider = serviceProvider;

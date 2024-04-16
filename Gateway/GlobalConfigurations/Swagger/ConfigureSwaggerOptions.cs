@@ -1,15 +1,16 @@
-﻿using Asp.Versioning;
+﻿using System.Text;
+using Asp.Versioning;
 using Asp.Versioning.ApiExplorer;
 using Microsoft.Extensions.Options;
 using Microsoft.OpenApi.Models;
 using Swashbuckle.AspNetCore.SwaggerGen;
-using System.Text;
 
 namespace Gateway.Swagger;
 
 public class ConfigureSwaggerOptions(
     IApiVersionDescriptionProvider provider,
-    IOptions<ServiceMetadata> serviceMetaData) : IConfigureOptions<SwaggerGenOptions>
+    IOptions<ServiceMetadata> serviceMetaData
+) : IConfigureOptions<SwaggerGenOptions>
 {
     private const string BreakLine = "<br />";
 
@@ -32,8 +33,16 @@ public class ConfigureSwaggerOptions(
         {
             Title = serviceMetaData.Value.ServiceName,
             Version = description.ApiVersion.ToString(),
-            Contact = new OpenApiContact() { Name = serviceMetaData.Value.ContactName, Email = serviceMetaData.Value.ContactEmail },
-            License = new OpenApiLicense() { Name = serviceMetaData.Value.License, Url = serviceMetaData.Value.LicenseUri },
+            Contact = new OpenApiContact()
+            {
+                Name = serviceMetaData.Value.ContactName,
+                Email = serviceMetaData.Value.ContactEmail
+            },
+            License = new OpenApiLicense()
+            {
+                Name = serviceMetaData.Value.License,
+                Url = serviceMetaData.Value.LicenseUri
+            },
             TermsOfService = serviceMetaData.Value.TermsOfService
         };
 

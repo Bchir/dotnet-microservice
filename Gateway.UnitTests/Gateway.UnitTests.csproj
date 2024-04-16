@@ -8,9 +8,9 @@
     <IsPackable>false</IsPackable>
     <IsTestProject>true</IsTestProject>
   </PropertyGroup>
-<ItemGroup>
-  <ProjectReference Include="../Gateway/Gateway.csproj" />
-</ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="../Gateway/Gateway.csproj" />
+  </ItemGroup>
   <ItemGroup>
     <PackageReference Include="coverlet.collector" Version="6.0.2">
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>

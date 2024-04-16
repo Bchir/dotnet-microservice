@@ -1,13 +1,12 @@
-﻿using Gateway.Apis.Amqp.Tooling;
-using OpenTelemetry.Context.Propagation;
-using RabbitMQ.Client.Events;
-using RabbitMQ.Client;
-using System.Diagnostics;
+﻿using System.Diagnostics;
 using System.Text;
-using OpenTelemetry;
 using System.Text.Json;
 using Microsoft.AspNetCore.Http.Json;
 using Microsoft.Extensions.Options;
+using OpenTelemetry;
+using OpenTelemetry.Context.Propagation;
+using RabbitMQ.Client;
+using RabbitMQ.Client.Events;
 
 namespace Gateway.Apis.Amqp.RegistrationExtensions
 {
@@ -20,25 +19,32 @@ namespace Gateway.Apis.Amqp.RegistrationExtensions
             IServiceProvider service,
             IModel channel,
             string queueName
-            )
+        )
         {
             channel.QueueDeclare(
-                        queue: queueName,
-                        durable: false,
-                        exclusive: false,
-                        autoDelete: false,
-                        arguments: null
-                    );
+                queue: queueName,
+                durable: false,
+                exclusive: false,
+                autoDelete: false,
+                arguments: null
+            );
             var consumer = new AsyncEventingBasicConsumer(channel);
             consumer.Received += async (model, ea) =>
             {
                 using (Activity? activity = CreateActivity(queueName, ea))
                 {
                     using var serviceScope = service.CreateAsyncScope();
-                    var jsonOptions = serviceScope.ServiceProvider.GetRequiredService<IOptions<JsonOptions>>();
-                    var messageHandler = serviceScope.ServiceProvider.GetRequiredService<IConsumer<TMessage>>();
+                    var jsonOptions = serviceScope
+                        .ServiceProvider
+                        .GetRequiredService<IOptions<JsonOptions>>();
+                    var messageHandler = serviceScope
+                        .ServiceProvider
+                        .GetRequiredService<IConsumer<TMessage>>();
                     var body = ea.Body.ToArray();
-                    var message = JsonSerializer.Deserialize<TMessage>(ea.Body.ToArray(), jsonOptions.Value.SerializerOptions);
+                    var message = JsonSerializer.Deserialize<TMessage>(
+                        ea.Body.ToArray(),
+                        jsonOptions.Value.SerializerOptions
+                    );
                     await messageHandler.RunAsync(message!, CancellationToken.None);
                 }
             };
@@ -49,17 +55,17 @@ namespace Gateway.Apis.Amqp.RegistrationExtensions
         private static Activity? CreateActivity(string queueName, BasicDeliverEventArgs ea)
         {
             var parentContext = Propagator.Extract(
-                                default,
-                                ea.BasicProperties,
-                                ExtractTraceContextFromBasicProperties
-                            );
+                default,
+                ea.BasicProperties,
+                ExtractTraceContextFromBasicProperties
+            );
             Baggage.Current = parentContext.Baggage;
             var activityName = $"{ea.RoutingKey} receive";
             var activity = ActivitySource.StartActivity(
-                                activityName,
-                                ActivityKind.Consumer,
-                                parentContext.ActivityContext
-                            );
+                activityName,
+                ActivityKind.Consumer,
+                parentContext.ActivityContext
+            );
             AddMessagingTags(activity, queueName, ea.Exchange);
             return activity;
         }
@@ -77,7 +83,11 @@ namespace Gateway.Apis.Amqp.RegistrationExtensions
             return [];
         }
 
-        private static void AddMessagingTags(Activity? activity, string queueName, string exchangeName)
+        private static void AddMessagingTags(
+            Activity? activity,
+            string queueName,
+            string exchangeName
+        )
         {
             activity?.SetTag("messaging.system", "rabbitmq");
             activity?.SetTag("messaging.destination_kind", "queue");

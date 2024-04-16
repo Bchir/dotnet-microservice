@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http.Features;
+﻿using System.Diagnostics;
+using Microsoft.AspNetCore.Http.Features;
 using Microsoft.Extensions.Options;
 using OpenTelemetry.Exporter;
 using Serilog;
@@ -7,7 +8,6 @@ using Serilog.Enrichers.Span;
 using Serilog.Events;
 using Serilog.Exceptions;
 using Serilog.Sinks.OpenTelemetry;
-using System.Diagnostics;
 using static Gateway.OpenTelemetryIntegration;
 using MicrosoftLogger = Microsoft.Extensions.Logging.ILogger;
 
@@ -15,73 +15,91 @@ namespace Gateway;
 
 public static class Logging
 {
-    private static readonly Action<MicrosoftLogger, string, string, int?, TimeSpan, Exception?> _logCompletion =
-        LoggerMessage.Define<string, string, int?, TimeSpan>(
-            LogLevel.Information,
-            new EventId(1, nameof(Logging)),
-            "HTTP {RequestMethod} {RequestPath} responded {StatusCode} in {Elapsed} ms"
-        );
+    private static readonly Action<
+        MicrosoftLogger,
+        string,
+        string,
+        int?,
+        TimeSpan,
+        Exception?
+    > _logCompletion = LoggerMessage.Define<string, string, int?, TimeSpan>(
+        LogLevel.Information,
+        new EventId(1, nameof(Logging)),
+        "HTTP {RequestMethod} {RequestPath} responded {StatusCode} in {Elapsed} ms"
+    );
 
     public static WebApplication UseRequestLogging(this WebApplication app)
     {
-        app.Use(async (context, next) =>
-        {
-            var stopWatch = Stopwatch.StartNew();
-            try
+        app.Use(
+            async (context, next) =>
             {
-                await next.Invoke();
-                stopWatch.Stop();
-                LogCompletion(context, stopWatch.Elapsed);
-            }
-            catch (Exception e)
-            {
-                if (stopWatch.IsRunning)
+                var stopWatch = Stopwatch.StartNew();
+                try
+                {
+                    await next.Invoke();
                     stopWatch.Stop();
-                LogCompletion(context, stopWatch.Elapsed, e);
-                throw;
+                    LogCompletion(context, stopWatch.Elapsed);
+                }
+                catch (Exception e)
+                {
+                    if (stopWatch.IsRunning)
+                        stopWatch.Stop();
+                    LogCompletion(context, stopWatch.Elapsed, e);
+                    throw;
+                }
             }
-        });
+        );
         return app;
     }
 
     public static WebApplicationBuilder AddLogger(this WebApplicationBuilder builder)
     {
         builder.Logging.ClearProviders();
-        builder.Host.UseSerilog((_, sp, configuration) =>
-        {
-            EnrichLog(configuration, sp);
-            SinkLog(configuration, sp);
-        });
+        builder.Host.UseSerilog(
+            (_, sp, configuration) =>
+            {
+                EnrichLog(configuration, sp);
+                SinkLog(configuration, sp);
+            }
+        );
 
         return builder;
     }
 
-    private static void SinkLog(LoggerConfiguration logConfiguration, IServiceProvider serviceProvider)
+    private static void SinkLog(
+        LoggerConfiguration logConfiguration,
+        IServiceProvider serviceProvider
+    )
     {
         var serviceMetaData = serviceProvider.GetRequiredService<IOptions<ServiceMetadata>>();
-        var openTelemetryOptions = serviceProvider.GetRequiredService<IOptions<OpenTelemetryOptions>>();
+        var openTelemetryOptions = serviceProvider.GetRequiredService<
+            IOptions<OpenTelemetryOptions>
+        >();
 
-        const string LogTemplate = "[{Timestamp:HH:mm:ss}][{Level:u3}][{SourceContext:1}] {Message:lj}{NewLine}{Exception}";
-        logConfiguration
-        .WriteTo.Console(outputTemplate: LogTemplate);
+        const string LogTemplate =
+            "[{Timestamp:HH:mm:ss}][{Level:u3}][{SourceContext:1}] {Message:lj}{NewLine}{Exception}";
+        logConfiguration.WriteTo.Console(outputTemplate: LogTemplate);
         if (openTelemetryOptions.Value.Enabled)
         {
             logConfiguration.WriteTo.OpenTelemetry(cfg =>
-             {
-                 cfg.Endpoint = $"{openTelemetryOptions.Value.Endpoint}/v1/logs";
-                 cfg.Headers = openTelemetryOptions.Value.ParsedHeaders;
-                 cfg.Protocol = MapProtocol(openTelemetryOptions.Value.Protocol);
-                 cfg.IncludedData = IncludedData.MessageTemplateTextAttribute | IncludedData.TraceIdField | IncludedData.SpanIdField;
-                 cfg.ResourceAttributes = new Dictionary<string, object>
-                                                {
-                                                    // TODO: Temporary solution, remove _logs
-                                                    // see https://github.com/dotnet/aspire/issues/1072
-                                                    {"service.name", serviceMetaData.Value.ServiceName + "_logs"},
-                                                    {"index", 10},
-                                                    {"flag", true},
-                                                    {"value", 3.14}
-                                                };
-             });
+            {
+                cfg.Endpoint = $"{openTelemetryOptions.Value.Endpoint}/v1/logs";
+                cfg.Headers = openTelemetryOptions.Value.ParsedHeaders;
+                cfg.Protocol = MapProtocol(openTelemetryOptions.Value.Protocol);
+                cfg.IncludedData =
+                    IncludedData.MessageTemplateTextAttribute
+                    | IncludedData.TraceIdField
+                    | IncludedData.SpanIdField;
+                cfg.ResourceAttributes = new Dictionary<string, object>
+                {
+                    // TODO: Temporary solution, remove _logs
+                    // see https://github.com/dotnet/aspire/issues/1072
+                    { "service.name", serviceMetaData.Value.ServiceName + "_logs" },
+                    { "index", 10 },
+                    { "flag", true },
+                    { "value", 3.14 }
+                };
+            });
         }
     }
 
@@ -95,39 +113,48 @@ public static class Logging
         };
     }
 
-    private static void EnrichLog(LoggerConfiguration configuration, IServiceProvider serviceProvider)
+    private static void EnrichLog(
+        LoggerConfiguration configuration,
+        IServiceProvider serviceProvider
+    )
     {
-        var serviceMetaData = serviceProvider
-            .GetRequiredService<IOptions<ServiceMetadata>>();
+        var serviceMetaData = serviceProvider.GetRequiredService<IOptions<ServiceMetadata>>();
 
         configuration
-           .MinimumLevel.Override("Microsoft.AspNetCore", LogEventLevel.Warning)
-           .Enrich.WithProperty(nameof(serviceMetaData.Value.ServiceName), serviceMetaData.Value.ServiceName)
-           .Enrich.WithExceptionDetails()
-           .Enrich.FromLogContext()
-           .Enrich.WithThreadId()
-           .Enrich.WithThreadName()
-           .Enrich.WithProcessName()
-           .Enrich.WithProcessId()
-           .Enrich.WithEnvironmentName()
-           .Enrich.WithMachineName()
-           .Enrich.FromGlobalLogContext()
-           .Enrich.WithClientIp()
-           .Enrich.WithSensitiveDataMasking((options) =>
-            {
-                options.MaskingOperators =
-                [
-                    new EmailAddressMaskingOperator(),
-                    new IbanMaskingOperator(),
-                    new CreditCardMaskingOperator()
-                ];
-            })
-           .Enrich.WithSpan(new SpanOptions
-           {
-               IncludeBaggage = true,
-               IncludeOperationName = true,
-               IncludeTags = true
-           });
+            .MinimumLevel.Override("Microsoft.AspNetCore", LogEventLevel.Warning)
+            .Enrich.WithProperty(
+                nameof(serviceMetaData.Value.ServiceName),
+                serviceMetaData.Value.ServiceName
+            )
+            .Enrich.WithExceptionDetails()
+            .Enrich.FromLogContext()
+            .Enrich.WithThreadId()
+            .Enrich.WithThreadName()
+            .Enrich.WithProcessName()
+            .Enrich.WithProcessId()
+            .Enrich.WithEnvironmentName()
+            .Enrich.WithMachineName()
+            .Enrich.FromGlobalLogContext()
+            .Enrich.WithClientIp()
+            .Enrich.WithSensitiveDataMasking(
+                (options) =>
+                {
+                    options.MaskingOperators =
+                    [
+                        new EmailAddressMaskingOperator(),
+                        new IbanMaskingOperator(),
+                        new CreditCardMaskingOperator()
+                    ];
+                }
+            )
+            .Enrich.WithSpan(
+                new SpanOptions
+                {
+                    IncludeBaggage = true,
+                    IncludeOperationName = true,
+                    IncludeTags = true
+                }
+            );
     }
 
     private static string GetPath(HttpContext httpContext)
@@ -141,7 +168,11 @@ public static class Logging
         return requestPath!;
     }
 
-    private static void LogCompletion(HttpContext httpContext, TimeSpan elapsed, Exception? exception = null)
+    private static void LogCompletion(
+        HttpContext httpContext,
+        TimeSpan elapsed,
+        Exception? exception = null
+    )
     {
         var logger = httpContext.RequestServices.GetRequiredService<ILogger<ApiLogging>>();
         var method = httpContext.Request.Method;

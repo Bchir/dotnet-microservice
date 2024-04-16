@@ -1,4 +1,4 @@
-﻿namespace Gateway.Apis.Amqp.Tooling;
+﻿namespace Gateway.Apis.Amqp.RegistrationExtensions;
 
 public interface IConsumer<T>
 {

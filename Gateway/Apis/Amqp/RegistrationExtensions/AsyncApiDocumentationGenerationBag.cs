@@ -1,21 +1,20 @@
 ﻿using Saunter;
 
-namespace Gateway.Apis.Amqp.Tooling;
+namespace Gateway.Apis.Amqp.RegistrationExtensions;
 
 public static class AsyncApiDocumentationGenerationBag
 {
-    private readonly static Queue<Action<AsyncApiOptions>> DocumentationActions = new();
+    private static readonly List<Action<AsyncApiOptions>> DocumentationActions = new();
 
     public static void AddDocumentation(Action<AsyncApiOptions> action)
     {
-        DocumentationActions.Enqueue(action);
+        DocumentationActions.Add(action);
     }
 
     public static void Apply(AsyncApiOptions options)
     {
-        while (DocumentationActions.Count > 0)
+        foreach (var action in DocumentationActions)
         {
-            var action = DocumentationActions.Dequeue();
             action(options);
         }
     }
