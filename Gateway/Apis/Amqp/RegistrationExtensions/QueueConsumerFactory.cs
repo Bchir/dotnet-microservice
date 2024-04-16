@@ -1,5 +1,4 @@
-﻿using Gateway.Apis.Amqp.Tooling;
-using OpenTelemetry.Context.Propagation;
+﻿using OpenTelemetry.Context.Propagation;
 using RabbitMQ.Client.Events;
 using RabbitMQ.Client;
 using System.Diagnostics;

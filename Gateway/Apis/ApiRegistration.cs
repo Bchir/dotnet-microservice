@@ -1,7 +1,9 @@
 ﻿using Asp.Versioning;
 using Asp.Versioning.Builder;
+using Gateway.Apis.Amqp.RegistrationExtensions;
+using Gateway.Apis.Http;
 
-namespace Gateway;
+namespace Gateway.Apis;
 
 public record VersionState(ApiVersion Version, bool IsDeprecated);
 
@@ -20,13 +22,13 @@ public static class ApiRegistration
         app.UseHttpApis(versionSet);
 
         return app;
-    
+
     }
 
 
     public static WebApplicationBuilder AddApis(this WebApplicationBuilder builder)
     {
-        // builder.AddAsyncApiHost();
+        builder.AddAsyncApiHost();
         return builder;
     }
 

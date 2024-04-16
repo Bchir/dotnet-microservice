@@ -1,6 +1,4 @@
-﻿using Gateway.Apis.Amqp.Tooling;
-
-namespace Gateway.Apis.Amqp.RegistrationExtensions
+﻿namespace Gateway.Apis.Amqp.RegistrationExtensions
 {
     public static class ServiceCollectionExtension
     {

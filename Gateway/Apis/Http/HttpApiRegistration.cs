@@ -1,6 +1,6 @@
 ﻿using Asp.Versioning.Builder;
 
-namespace Gateway;
+namespace Gateway.Apis.Http;
 
 public static class HttpApiRegistration
 {

@@ -1,5 +1,10 @@
+using Gateway.Apis;
+using Gateway.Apis.Amqp.Orders;
 using Gateway.Swagger;
 using HealthChecks.ApplicationStatus.DependencyInjection;
+using Microsoft.OpenApi.Models;
+using Saunter;
+using Swashbuckle.AspNetCore.SwaggerGen;
 
 namespace Gateway;
 
@@ -7,6 +12,13 @@ public class Program
 {
     private static async Task Main(string[] args)
     {
+        var schemaRepository = new SchemaRepository();
+        var a = new SchemaGenerator(new SchemaGeneratorOptions
+        {
+
+        }, new JsonSerializerDataContractResolver(new System.Text.Json.JsonSerializerOptions(System.Text.Json.JsonSerializerDefaults.Web)));
+        
+        a.GenerateSchema(typeof(CreateOrderAsync), schemaRepository);
         var builder = WebApplication.CreateBuilder(args);
         builder
             .Configuration
@@ -26,7 +38,8 @@ public class Program
         builder.Services.AddHealthChecks()
         .AddDiskStorageHealthCheck(x => x.CheckAllDrives = true)
         .AddProcessAllocatedMemoryHealthCheck(500)
-        .AddApplicationStatus();
+        .AddApplicationStatus()
+        .AddSqlServer("MyDataBase");
         builder.Services.AddProblemDetails();
         builder.AddApis();
 
@@ -40,6 +53,8 @@ public class Program
 
         app.UseApis();
         app.UseSwaggerDocumentation();
+        app.MapAsyncApiDocuments();
+        app.MapAsyncApiUi();
         await app.RunAsync();
     }
 }
