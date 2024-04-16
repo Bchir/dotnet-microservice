@@ -36,7 +36,10 @@ public static class SwaggerDocumentation
 
     public static WebApplicationBuilder AddSwagger(this WebApplicationBuilder builder)
     {
-        builder.Services.AddTransient<IConfigureOptions<SwaggerGenOptions>, ConfigureSwaggerOptions>();
+        builder
+            .Services
+            .AddTransient<IConfigureOptions<SwaggerGenOptions>, ConfigureSwaggerOptions>();
+
         builder.Services.AddSwaggerGen(o =>
         {
             o.OperationFilter<DeprecationOperationFilter>();

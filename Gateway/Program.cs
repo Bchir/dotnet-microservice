@@ -12,34 +12,22 @@ public class Program
 {
     private static async Task Main(string[] args)
     {
-        var schemaRepository = new SchemaRepository();
-        var a = new SchemaGenerator(new SchemaGeneratorOptions
-        {
-
-        }, new JsonSerializerDataContractResolver(new System.Text.Json.JsonSerializerOptions(System.Text.Json.JsonSerializerDefaults.Web)));
-        
-        a.GenerateSchema(typeof(CreateOrderAsync), schemaRepository);
         var builder = WebApplication.CreateBuilder(args);
-        builder
-            .Configuration
-            .AddEnvironmentVariables();
+        builder.Configuration.AddEnvironmentVariables();
 
-        var serviceMetaData = builder
-            .AddServiceMetadata();
+        var serviceMetaData = builder.AddServiceMetadata();
 
-        builder
-            .AddVersioning()
-            .AddSwagger()
-            .AddLogger();
+        builder.AddVersioning().AddSwagger().AddLogger();
         // security reasons
         builder.WebHost.ConfigureKestrel(options => options.AddServerHeader = false);
         builder.AddOpenTelemetryIntegration(serviceMetaData);
         builder.Services.AddEndpointsApiExplorer();
-        builder.Services.AddHealthChecks()
-        .AddDiskStorageHealthCheck(x => x.CheckAllDrives = true)
-        .AddProcessAllocatedMemoryHealthCheck(500)
-        .AddApplicationStatus()
-        .AddSqlServer("MyDataBase");
+        builder
+            .Services.AddHealthChecks()
+            .AddDiskStorageHealthCheck(x => x.CheckAllDrives = true)
+            .AddProcessAllocatedMemoryHealthCheck(500)
+            .AddApplicationStatus()
+            .AddSqlServer("MyDataBase");
         builder.Services.AddProblemDetails();
         builder.AddApis();
 

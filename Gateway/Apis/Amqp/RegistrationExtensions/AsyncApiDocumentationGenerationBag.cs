@@ -4,7 +4,7 @@ namespace Gateway.Apis.Amqp.RegistrationExtensions;
 
 public static class AsyncApiDocumentationGenerationBag
 {
-    private readonly static List<Action<AsyncApiOptions>> DocumentationActions = new();
+    private static readonly List<Action<AsyncApiOptions>> DocumentationActions = new();
 
     public static void AddDocumentation(Action<AsyncApiOptions> action)
     {

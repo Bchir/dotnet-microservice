@@ -20,11 +20,10 @@ public static class AsyncApiRegistration
         builder.Services.AddHealthChecks().AddRabbitMQ(rabbitMqUri, tags: []);
 
         builder.Services.AddAsyncApiSchemaGeneration(options =>
-            {
-                AsyncApiDocumentationGenerationBag.Apply(options);
-            });
+        {
+            AsyncApiDocumentationGenerationBag.Apply(options);
+        });
 
         return builder;
     }
-
 }

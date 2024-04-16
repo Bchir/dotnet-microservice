@@ -1,40 +1,33 @@
 ﻿using RabbitMQ.Client;
+using Saunter.AsyncApiSchema.v2;
 using Saunter.Utils;
-
 
 namespace Gateway.Apis.Amqp.RegistrationExtensions;
 
 public static class AsyncApiConsumerFactoryBag
 {
-
     private static readonly Queue<Action<IModel, IServiceProvider>> DocumentationActions = new();
 
-
-    public static void AddQueueConsumer<TMessage>(
-        VersionState versionState)
+    public static void AddQueueConsumer<TMessage>(VersionState versionState)
     {
         string queueName = $"{versionState.Version:'v'VVV}/{typeof(TMessage).Name}";
         DocumentationActions.Enqueue(
             (model, sp) =>
             {
-                QueueConsumerFactory
-                                .CreateQueueConsumer<TMessage>(
-                                    sp,
-                                    model,
-                                    queueName);
-            });
-        AsyncApiDocumentationGenerationBag.AddDocumentation(x => {
+                QueueConsumerFactory.CreateQueueConsumer<TMessage>(sp, model, queueName);
+            }
+        );
+        AsyncApiDocumentationGenerationBag.AddDocumentation(x =>
+        {
             x.AsyncApi.Channels.AddOrAppend(
                 queueName,
                 new Saunter.AsyncApiSchema.v2.ChannelItem()
                 {
-                    Subscribe = new Saunter.AsyncApiSchema.v2.Operation()
-                    {
-                        
-                    }
+                    Subscribe = new Saunter.AsyncApiSchema.v2.Operation() { },
+                    Publish = new Operation() { Message = new Message() }
                 }
-                );
-            });
+            );
+        });
     }
 
     public static void CreateConsumers(IModel model, IServiceProvider serviceProvider)
@@ -45,5 +38,4 @@ public static class AsyncApiConsumerFactoryBag
             consumerFactory(model, serviceProvider);
         }
     }
-
 }

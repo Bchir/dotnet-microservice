@@ -2,7 +2,8 @@
 
 namespace Gateway.Apis.Amqp.RegistrationExtensions;
 
-public class ConsumerHost(IConnectionFactory connectionFactory, IServiceProvider serviceProvider) : IHostedService
+public class ConsumerHost(IConnectionFactory connectionFactory, IServiceProvider serviceProvider)
+    : IHostedService
 {
     private readonly IConnectionFactory _connectionFactory = connectionFactory;
     private readonly IServiceProvider _serviceProvider = serviceProvider;

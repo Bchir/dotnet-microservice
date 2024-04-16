@@ -16,10 +16,9 @@ public static class ServiceMetadataRegistration
 {
     public static ServiceMetadata AddServiceMetadata(this WebApplicationBuilder builder)
     {
-        builder.Services
-            .Configure<ServiceMetadata>(
-                builder.Configuration.GetRequiredSection(nameof(ServiceMetadata))
-                );
+        builder.Services.Configure<ServiceMetadata>(
+            builder.Configuration.GetRequiredSection(nameof(ServiceMetadata))
+        );
         var serviceMetadata = new ServiceMetadata()
         {
             ServiceName = string.Empty,
@@ -27,9 +26,7 @@ public static class ServiceMetadataRegistration
             License = string.Empty
         };
 
-        builder.Configuration
-            .GetSection(nameof(ServiceMetadata))
-            .Bind(serviceMetadata);
+        builder.Configuration.GetSection(nameof(ServiceMetadata)).Bind(serviceMetadata);
         return serviceMetadata;
     }
 }

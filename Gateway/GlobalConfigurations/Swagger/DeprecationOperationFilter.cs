@@ -6,9 +6,7 @@ namespace Gateway.Swagger;
 
 public class DeprecationOperationFilter : IOperationFilter
 {
-    public DeprecationOperationFilter()
-    {
-    }
+    public DeprecationOperationFilter() { }
 
     public void Apply(OpenApiOperation operation, OperationFilterContext context)
     {
