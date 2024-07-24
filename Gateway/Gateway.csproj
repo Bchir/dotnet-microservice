@@ -29,7 +29,7 @@
     <PackageReference Include="RabbitMQ.Client" Version="6.8.1" />
     <PackageReference Include="Saunter" Version="0.13.0" />
     <PackageReference Include="Serilog.AspNetCore" Version="8.0.2-dev-00338" />
-    <PackageReference Include="Serilog.Enrichers.ClientInfo" Version="2.0.3" />
+    <PackageReference Include="Serilog.Enrichers.ClientInfo" Version="2.1.0" />
     <PackageReference Include="Serilog.Enrichers.Environment" Version="3.0.1" />
     <PackageReference Include="Serilog.Enrichers.GlobalLogContext" Version="3.0.0" />
     <PackageReference Include="Serilog.Enrichers.Process" Version="3.0.0" />
