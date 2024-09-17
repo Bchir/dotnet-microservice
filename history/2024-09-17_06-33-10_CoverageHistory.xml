@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<coverage version="1.0" date="2024-09-17_06-33-10" tag="27_10897781855">
+  <assembly name="Gateway">
+    <class name="Gateway.Apis.Amqp.Orders.CreateOrderAsync" coveredlines="0" coverablelines="1" totallines="16" coveredbranches="0" totalbranches="0" coveredcodeelements="0" totalcodeelements="1" />
+    <class name="Gateway.Apis.Amqp.Orders.CreateOrderHandler" coveredlines="0" coverablelines="1" totallines="16" coveredbranches="0" totalbranches="0" coveredcodeelements="0" totalcodeelements="1" />
+    <class name="Gateway.Apis.Amqp.RegistrationExtensions.AsyncApiConsumerFactoryBag" coveredlines="0" coverablelines="24" totallines="41" coveredbranches="0" totalbranches="2" coveredcodeelements="0" totalcodeelements="3" />
+    <class name="Gateway.Apis.Amqp.RegistrationExtensions.AsyncApiDocumentationGenerationBag" coveredlines="0" coverablelines="6" totallines="21" coveredbranches="0" totalbranches="2" coveredcodeelements="0" totalcodeelements="3" />
+    <class name="Gateway.Apis.Amqp.RegistrationExtensions.AsyncApiRegistration" coveredlines="0" coverablelines="13" totallines="29" coveredbranches="0" totalbranches="0" coveredcodeelements="0" totalcodeelements="2" />
+    <class name="Gateway.Apis.Amqp.RegistrationExtensions.ConsumerHost" coveredlines="0" coverablelines="10" totallines="27" coveredbranches="0" totalbranches="4" coveredcodeelements="0" totalcodeelements="3" />
+    <class name="Gateway.Apis.Amqp.RegistrationExtensions.QueueConsumerFactory" coveredlines="0" coverablelines="54" totallines="98" coveredbranches="0" totalbranches="10" coveredcodeelements="0" totalcodeelements="5" />
+    <class name="Gateway.Apis.Amqp.RegistrationExtensions.ServiceCollectionExtension" coveredlines="0" coverablelines="3" totallines="16" coveredbranches="0" totalbranches="0" coveredcodeelements="0" totalcodeelements="1" />
+    <class name="Gateway.Apis.ApiRegistration" coveredlines="0" coverablelines="18" totallines="51" coveredbranches="0" totalbranches="2" coveredcodeelements="0" totalcodeelements="4" />
+    <class name="Gateway.Apis.Http.HttpApiRegistration" coveredlines="0" coverablelines="21" totallines="32" coveredbranches="0" totalbranches="0" coveredcodeelements="0" totalcodeelements="1" />
+    <class name="Gateway.Apis.VersionState" coveredlines="0" coverablelines="1" totallines="51" coveredbranches="0" totalbranches="0" coveredcodeelements="0" totalcodeelements="1" />
+    <class name="Gateway.Logging" coveredlines="0" coverablelines="121" totallines="185" coveredbranches="0" totalbranches="12" coveredcodeelements="0" totalcodeelements="9" />
+    <class name="Gateway.OpenTelemetryIntegration" coveredlines="0" coverablelines="84" totallines="145" coveredbranches="0" totalbranches="16" coveredcodeelements="0" totalcodeelements="10" />
+    <class name="Gateway.Probes" coveredlines="0" coverablelines="27" totallines="46" coveredbranches="0" totalbranches="0" coveredcodeelements="0" totalcodeelements="1" />
+    <class name="Gateway.Program" coveredlines="0" coverablelines="27" totallines="48" coveredbranches="0" totalbranches="0" coveredcodeelements="0" totalcodeelements="1" />
+    <class name="Gateway.ServiceMetadata" coveredlines="0" coverablelines="8" totallines="32" coveredbranches="0" totalbranches="0" coveredcodeelements="0" totalcodeelements="8" />
+    <class name="Gateway.ServiceMetadataRegistration" coveredlines="0" coverablelines="11" totallines="32" coveredbranches="0" totalbranches="0" coveredcodeelements="0" totalcodeelements="1" />
+    <class name="Gateway.Swagger.ConfigureSwaggerOptions" coveredlines="0" coverablelines="42" totallines="78" coveredbranches="0" totalbranches="12" coveredcodeelements="0" totalcodeelements="3" />
+    <class name="Gateway.Swagger.DeprecationOperationFilter" coveredlines="1" coverablelines="4" totallines="16" coveredbranches="0" totalbranches="0" coveredcodeelements="1" totalcodeelements="2" />
+    <class name="Gateway.Swagger.SwaggerDocumentation" coveredlines="0" coverablelines="38" totallines="57" coveredbranches="0" totalbranches="4" coveredcodeelements="0" totalcodeelements="2" />
+    <class name="Gateway.Versioning" coveredlines="0" coverablelines="19" totallines="30" coveredbranches="0" totalbranches="0" coveredcodeelements="0" totalcodeelements="1" />
+  </assembly>
+</coverage>
